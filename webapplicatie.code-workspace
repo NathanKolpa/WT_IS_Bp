@@ -1,0 +1,92 @@
+{
+  "folders": [
+    {
+      "name": "Webapplicatie",
+      "path": "."
+    },
+    {
+      "name": "SQL Server 2019",
+      "path": "rdbms"
+    },
+    {
+      "name": "PHP 7.4",
+      "path": "webserver"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "esbenp.prettier-vscode",
+      "foxundermoon.shell-format",
+      "github.vscode-pull-request-github",
+      "hookyqr.beautify",
+      "kokororin.vscode-phpfmt",
+      "ms-vscode-remote.remote-containers",
+      "ms-vscode-remote.vscode-remote-extensionpack",
+      "mehedidracula.php-namespace-resolver",
+      "redhat.vscode-yaml",
+      "sleistner.vscode-fileutils",
+      "timonwong.shellcheck",
+      "tyriar.sort-lines",
+      "visualstudioexptteam.vscodeintellicode",
+      "bmewburn.vscode-intelephense-client",
+      "felixfbecker.php-debug",
+      "kokororin.vscode-phpfmt",
+      "ecodes.vscode-phpmd",
+      "ms-mssql.mssql",
+      "sonarsource.sonarlint-vscode"
+    ],
+    "unwantedRecommendations": [
+      // TODO: This extension is buggy in Dev Containers.
+      "ms-vsliveshare.vsliveshare",
+      // The following tools aren't installed within the dev container, so the extensions won't work.
+      "ms-kubernetes-tools.vscode-kubernetes-tools"
+    ]
+  },
+  "settings": {
+    "sonarlint.ls.javaHome": "/usr/",
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [120]
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [120]
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [120]
+    },
+    "[php]": {
+      "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+      "editor.formatOnSave": true,
+      "editor.rulers": [120]
+    },
+    "editor.formatOnSave": true,
+    "files.associations": {
+      "*.txt": "Plain Text",
+      "**/*.html": "html"
+    },
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.hg": true,
+      "**/.svn": true,
+      "**/CVS": true
+    },
+    "beautify.language": {
+      "html": ["htm", "html"]
+    },
+    "remote.extensionKind": {
+      "ms-azuretools.vscode-docker": "workspace",
+      "ms-kubernetes-tools.vscode-kubernetes-tools": ["ui"],
+      "ms-vsliveshare.vsliveshare": ["ui"]
+    },
+    "workbench.tree.indent": 24
+  }
+}

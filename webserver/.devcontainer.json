@@ -1,0 +1,30 @@
+{
+  "name": "PHP",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "webserver",
+  "workspaceFolder": "/srv/webserver",
+  "shutdownAction": "none",
+  "extensions": [
+    "higoka.php-cs-fixer",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "foxundermoon.shell-format",
+    "github.vscode-pull-request-github",
+    "hookyqr.beautify",
+    "kokororin.vscode-phpfmt",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "mehedidracula.php-namespace-resolver",
+    "redhat.vscode-yaml",
+    "sleistner.vscode-fileutils",
+    "timonwong.shellcheck",
+    "tyriar.sort-lines",
+    "visualstudioexptteam.vscodeintellicode",
+    "felixfbecker.php-debug",
+    "kokororin.vscode-phpfmt",
+    "ecodes.vscode-phpmd",
+    "sonarsource.sonarlint-vscode"
+  ]
+}

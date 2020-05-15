@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+    rdbms:
+        environment:
+            - ACCEPT_EULA=Y
+            # TODO: (infosec)
+            - SA_PASSWORD=test-password-0nly
+            - MSSQL_AGENT_ENABLED=1
+        image: mcr.microsoft.com/mssql/server:2019-CU4-ubuntu-16.04
+        ports:
+            - target: "1433"
+              published: "1433"
+              protocol: tcp
+              mode: bridge
+        # TODO: nodig voor installatie van VS Code MS SQL Server extension (infosec)
+        user: root
+        networks:
+            - webapplicatie
+        volumes:
+            - ./:/srv/rdbms:cached
+            - type: volume
+              source: home_mssql
+              target: /home/mssql/
+              volume:
+                  nocopy: true
+volumes:
+    home_mssql:
+networks:
+    webapplicatie:
+        name: webapplicatie

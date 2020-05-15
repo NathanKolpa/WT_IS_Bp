@@ -1,0 +1,13 @@
+version = 1
+
+delete_branch_on_merge = true
+merge.message.title = "pull_request_title"
+merge.message.body = "pull_request_body"
+merge.message.include_pull_request_url = true
+merge.method = "squash"
+# Save GitHub Automation time by only syncing the PR against the default branch if it passes QA control.
+merge.optimistic_updates = false
+# If a PR is ready more quickly, reward this.
+merge.prioritize_ready_to_merge = true
+# We do not want to wait for reviews when a PR is out-of-sync with the default branch. We only want to get to review in-sync code.
+update.always = true

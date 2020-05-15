@@ -1,0 +1,17 @@
+{
+  "mssql.connections": [
+    {
+      "server": "localhost",
+      "database": "",
+      "authenticationType": "SqlLogin",
+      "user": "SA",
+      // TODO: (infosec)
+      "password": "test-password-0nly",
+      "emptyPasswordInput": false,
+      "savePassword": false,
+      "profileName": "Webapplicatie master database"
+    }
+  ],
+  "workbench.tree.indent": 24,
+  "workbench.startupEditor": "none"
+}
