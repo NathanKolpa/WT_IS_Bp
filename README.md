@@ -31,8 +31,7 @@ Zie: [_Opening workspace files_](https://code.visualstudio.com/docs/editor/multi
 ### 3. VS Code: installeer de benodigde extensies
 
 Op een gegeven moment krijg je
-![de vraag of je de door deze workspace aanbevolen extensies wilt installeren](img/This_workspace_has_extension_recommendations.png)
-
+![de vraag of je de door deze workspace aanbevolen extensies wilt installeren.](img/This_workspace_has_extension_recommendations.png)
 Reageer met _Install All_.
 
 ### 4. VS Code: open een nieuw venster **voor SQL Server 2019**
@@ -55,7 +54,7 @@ Select de map `rdbms`, dus niet een bestand erbinnen.
 Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont. Dit kan de eerste keer tot ca. 10 minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
 
 Op een gegeven moment krijg je
-![de vraag of je de dev container binnen deze map wilt activeren](img/Dev_container_reopen.png)
+![de vraag of je de dev container binnen deze map wilt activeren.](img/Dev_container_reopen.png)
 Reageer met _Reopen in Container_.
 
 ### 8. VS Code: open een nieuw venster **voor PHP**
@@ -71,7 +70,7 @@ Via de menubalk bovenaan: _File_ > _Open..._. Selecteer de map `webserver`, dus 
 Neem ook hier de inleidende opmerking serieus bij de eerdere stap _... activeer de dev container voor SQL Server 2019_.
 
 Op een gegeven moment krijg je
-![de vraag of je de dev container binnen deze map wilt activeren](img/Folder_contains_a_dev_configuration_file_Reopen_folder_to_develop_in_a_container.png)
+![de vraag of je de dev container binnen deze map wilt activeren.](img/Folder_contains_a_dev_configuration_file_Reopen_folder_to_develop_in_a_container.png)
 Reageer met _Reopen in Container_.
 
 ### 11. Browser: bezoek nu de website op http://127.0.0.1/over
