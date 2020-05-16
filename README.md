@@ -36,7 +36,7 @@ Op een gegeven moment krijg je
 
 Reageer met _Install All_.
 
-### 4. VS Code: open een nieuw venster **voor SQL Server 2019**
+### 4. VS Code: open een nieuw venster voor SQL Server 2019
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
@@ -57,11 +57,11 @@ Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vert
 
 Op een gegeven moment krijg je
 
-![de vraag of je de dev container binnen deze map wilt activeren.](img/Dev_container_reopen.png)
+![de vraag of je de dev container binnen deze map wilt activeren.](img/Folder_contains_a_dev_configuration_file_Reopen_folder_to_develop_in_a_container.png)
 
 Reageer met _Reopen in Container_.
 
-### 8. VS Code: open een nieuw venster **voor PHP**
+### 8. VS Code: open een nieuw venster voor PHP
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
