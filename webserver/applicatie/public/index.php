@@ -1,10 +1,11 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types = 1);
 
 namespace fletnix\index;
 
-require __DIR__ . '/../config/bootstrap.php';
+require_once __DIR__ . '/../config/bootstrap.php';
+require_once ROOT_DIR . '/config/db.php';
 
 error_reporting(E_ALL);
 
@@ -19,6 +20,9 @@ switch ($request) {
         break;
     case '/over':
         require ROOT_DIR . '/src/views/over.php';
+        break;
+    case '/test_db':
+        require ROOT_DIR . '/src/views/test_db.php';
         break;
     default:
         http_response_code(404);
