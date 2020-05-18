@@ -42,16 +42,12 @@ Via de menubalk bovenaan: _File_ > _New Window_.
 
 N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met SQL Server 2019.
 
-### 5. Browser: download de database dump
-
-Download de [Adventure Works 2017](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15) database dump vanaf https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak naar de huidige map `rdbms/`. Sla het bestand op onder de naam `AdventureWorks2017.bak`.
-
-### 6. VS Code: open de folder `rdbms` in het venster voor SQL Server 2019
+### 5. VS Code: open de folder `rdbms` in het venster voor SQL Server 2019
 
 Via de menubalk bovenaan: _File_ > _Open..._.
 Select de map `rdbms`, dus niet een bestand erbinnen.
 
-### 7. VS Code: activeer de dev container voor SQL Server 2019
+### 6. VS Code: activeer de dev container voor SQL Server 2019
 
 Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont. Dit kan de eerste keer tot ca. 10 minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
 
@@ -61,15 +57,15 @@ Op een gegeven moment krijg je
 
 Reageer met _Reopen in Container_.
 
-### 8. VS Code: open een nieuw venster voor PHP
+### 7. VS Code: open een nieuw venster voor PHP
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
-### 9. VS Code: open de folder `webserver` in het venster voor PHP
+### 8. VS Code: open de folder `webserver` in het venster voor PHP
 
 Via de menubalk bovenaan: _File_ > _Open..._. Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
-### 10. VS Code: activeer de dev container voor PHP
+### 9. VS Code: activeer de dev container voor PHP
 
 Neem ook hier de inleidende opmerking serieus bij de eerdere stap _... activeer de dev container voor SQL Server 2019_.
 
@@ -79,11 +75,35 @@ Op een gegeven moment krijg je
 
 Reageer met _Reopen in Container_.
 
-### 11. Browser: bezoek nu de website op http://127.0.0.1/over
-
-**N.B.**: In de huidige versie van dit template moet als je, i.t.t. de instructie, naar index-pagina gaat, eerst even wachten tot de database dump is hersteld.
+### 10. Browser: bezoek nu de website op http://127.0.0.1/over
 
 ## Vraag en antwoord
+
+### Hoe kan ik de database vullen?
+
+Getest is het herstellen van een `.bak`-bestand met een dump van de AdventureWorks-voorbeelddatabase.
+
+### 1. Browser: download de database dump (eenmalig)
+
+Download de [Adventure Works 2017](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15) database dump vanaf https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak naar de map [`rdbms/`](/rdbms). Sla het bestand op onder de naam `AdventureWorks2017.bak`.
+
+### 2. Herhaal het _stappenplan voor start_
+
+Sluit VS Code helemaal af, en herhaal het stappenplan.
+
+(N.B.: Alleen zodra je gevorderd bent in het omgaan met VS Code en dev containers kan je zelf een kortere weg bedenken.)
+
+### 3. VS Code: start de task _Herstel de AdventureWorks-database_ in het venster voor PHP
+
+Zorg ervoor dat je in het venster voor PHP bezig bent.
+
+Kies Menubalk > _Terminal_ > _Run Task..._.
+
+![Menubalk > _Terminal_ > _Run Task..._.](img/Menu_Terminal_Run_Task.png)
+
+Kies vervolgens _Herstel de AdventureWorks-database_.
+
+![_Herstel de AdventureWorks-database_](img/Herstel_de_AdventureWorks-database.png)
 
 ### Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?
 
