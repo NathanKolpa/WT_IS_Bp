@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare (strict_types = 1);
 
 namespace fletnix\views\index;
 
@@ -16,6 +16,7 @@ error_reporting(E_ALL);
 </head>
 
 <body>
+<?php phpinfo()?>
 </body>
 
 </html>
