@@ -9,23 +9,21 @@ require_once ROOT_DIR . '/config/db.php';
 
 error_reporting(E_ALL);
 
-$request = $_SERVER['REQUEST_URI'];
-
-switch ($request) {
+switch ($_SERVER['REQUEST_URI']) {
     case '/':
-        include ROOT_DIR . '/src/views/index.php';
+        require_once ROOT_DIR . '/src/views/index.php';
         break;
     case '':
-        include ROOT_DIR . '/src/views/index.php';
+        require_once ROOT_DIR . '/src/views/index.php';
         break;
     case '/over':
-        require ROOT_DIR . '/src/views/over.php';
+        require_once ROOT_DIR . '/src/views/over.php';
         break;
     case '/test_db':
-        require ROOT_DIR . '/src/views/test_db.php';
+        require_once ROOT_DIR . '/src/views/test_db.php';
         break;
     default:
         http_response_code(404);
-        require ROOT_DIR . '/src/views/404.php';
+        require_once ROOT_DIR . '/src/views/404.php';
         break;
 }

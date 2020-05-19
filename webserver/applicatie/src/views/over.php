@@ -1,8 +1,8 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
-namespace fletnix\over;
+namespace fletnix\views\over;
 
 error_reporting(E_ALL);
 ?>
