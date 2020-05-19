@@ -14,6 +14,7 @@ mv php-cs-fixer /usr/local/bin/php-cs-fixer
 
 # Install SQL Server drivers
 
+# Install SQL Server ODBC drivers and tools (required for the sqlsrv driver).
 curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.apk
 curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.apk
 
@@ -36,8 +37,9 @@ apk add --no-cache php7 php7-dev php7-pear php7-pdo php7-openssl autoconf make g
 cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 pecl config-set php_ini /usr/local/etc/php/php.ini
 
-pecl install sqlsrv
-docker-php-ext-enable sqlsrv
+# Procedural sqlsrv. Enable for debugging only.
+#pecl install sqlsrv
+#docker-php-ext-enable sqlsrv
 
 pecl install pdo_sqlsrv
 docker-php-ext-enable pdo_sqlsrv

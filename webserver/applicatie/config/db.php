@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare (strict_types = 1);
 
 namespace fletnix\config;
 
@@ -8,10 +8,10 @@ error_reporting(E_ALL);
 
 class Db
 {
-    public const rdbmsHost = "tcp:rdbms,1433";
+    public const HOST = 'rdbms';
     # TODO: use
-    public const rdbmsDb = 'master';
-    public const rdbmsLogin = 'sa';
+    public const DATABASE = 'AdventureWorks';
+    public const LOGIN = 'sa';
     # TODO: (infosec)
-    public const rdbmsPassword = 'test-password-0nly';
+    public const PASSWORD = 'test-password-0nly';
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare (strict_types = 1);
 
 namespace fletnix\data;
 
@@ -11,43 +11,26 @@ error_reporting(E_ALL);
 
 function herstelDb()
 {
-    try {
-        $connection = verbindDb("master");
-        $tsql = "SET NOCOUNT ON;
-        RESTORE DATABASE [AdventureWorks]
-        FROM DISK = N'/srv/rdbms/AdventureWorks2017.bak'
-        WITH MOVE 'AdventureWorks2017'
-        TO '/var/opt/mssql/data/AdventureWorks2017.mdf',
-        MOVE 'AdventureWorks2017_log'
-        TO '/var/opt/mssql/data/AdventureWorks2017.ldf', REPLACE, RECOVERY, STATS = 10;";
-        sqlsrv_configure("WarningsReturnAsErrors", false);
-        // TODO: check specific error status
-        $response = sqlsrv_query($connection, $tsql);
-        if (!$response) {
-            error_log(__FILE__ . ":" . __LINE__ . ": " . json_encode(sqlsrv_errors()) . "\n");
-            if (sqlsrv_errors(SQLSRV_ERR_ERRORS)) {
-                error_log("Fatal.\n");
-                return false;
-            }
+    try
+    {
+        $verbinding = verbindDb('master');
+        $query = "SET NOCOUNT ON;
+            RESTORE DATABASE [AdventureWorks]
+            FROM DISK = N'/srv/rdbms/AdventureWorks2017.bak'
+            WITH MOVE 'AdventureWorks2017'
+            TO '/var/opt/mssql/data/AdventureWorks2017.mdf',
+            MOVE 'AdventureWorks2017_log'
+            TO '/var/opt/mssql/data/AdventureWorks2017.ldf', REPLACE, RECOVERY, STATS = 10;";
+        $pdostatement = $verbinding->prepare($query);
+        if (!$pdostatement->execute()) {
+            error_log(__FILE__ . ":" . __LINE__ . ": " . json_encode($pdostatement->errorInfo()) . "\n");
+            throw Exception("Kon PDO Statement niet uitvoeren. ");
         }
-        error_log("Database is being restored ...\n");
-        while ($nextResult = sqlsrv_next_result($response)) {
-            $errors = sqlsrv_errors();
-            if ($errors) {
-                error_log(__FILE__ . ":" . __LINE__ . ": " . json_encode($errors) . "\n");
-                if (sqlsrv_errors(SQLSRV_ERR_ERRORS)) {
-                    error_log("Fatal.\n");
-                    return false;
-                }
-            }
-            error_log("Next result: " . $nextResult . "\n");
+        while ($pdostatement->nextRowset()) {
+            error_log(__FILE__ . ":" . __LINE__ . ": Status: " . json_encode($pdostatement->errorInfo()) . "\n");
         }
-        sqlsrv_configure("WarningsReturnAsErrors", true);
-        sqlsrv_free_stmt($response);
-        sqlsrv_close($connection);
-    } catch (Exception $error) {
-        error_log("Error: " . json_encode($error) . "\n");
-        return false;
+        $pdostatement = null;
+    } catch (Exception $fout) {
+        error_log(__FILE__ . ":" . __LINE__ . ": " . json_encode($fout) . "\n");
     }
-    return true;
 }
