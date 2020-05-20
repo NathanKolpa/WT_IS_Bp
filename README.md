@@ -111,6 +111,10 @@ In de dev container [SQL Server 2019](/rdbms/) staat de [SQL Server-extensie voo
 
 Ook kan je [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) gebruiken.
 
+### Hoe kan ik versiebeheer met Git gebruiken?
+
+Alleen het workspace-venster is daarvoor op dit moment uitgerust (mits je zelf Git al op je computer hebt geïnstalleerd). Ontwikkelen doe je dus in de dev containers oftewel de specifieke vensters, en Git-acties verrichten kan je vervolgens vanuit het workspace-venster.
+
 ## Ontwerp
 
 Dit template gebruikt [de ingebouwde webserver van PHP](https://www.php.net/manual/en/features.commandline.webserver.php), omdat dat (1) voor een minder ingewikkelde opzet zorgt en (2) voldoende is voor deze onderwijsopdracht.
