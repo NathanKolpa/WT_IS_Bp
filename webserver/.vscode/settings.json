@@ -1,17 +1,13 @@
 {
-  "[php]": {
-    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
-  },
-  "editor": {
+    "[php]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+    },
     // Stel de verwachte regellengte in, om discussie over leesbaarheid te voorkomen.
-    "rulers": [120],
-    "formatOnSave": true,
-    "defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "sonarlint.ls.javaHome": "/usr/",
-  // Maak VS Code zo gebruikersvriendelijk mogelijk.
-  "workbench": {
-    "tree.indent": 24,
-    "startupEditor": "none"
-  }
+    "editor.rulers": [120],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "sonarlint.ls.javaHome": "/usr/",
+    // Maak VS Code zo gebruikersvriendelijk mogelijk.
+    "workbench.tree.indent": 24,
+    "workbench.startupEditor": "none"
 }

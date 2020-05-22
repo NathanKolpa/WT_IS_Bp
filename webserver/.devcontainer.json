@@ -1,22 +1,22 @@
 {
-  "name": "PHP",
-  "dockerComposeFile": ["docker-compose.yml"],
-  "service": "webserver",
-  "workspaceFolder": "/srv/webserver",
-  "shutdownAction": "none",
-  "extensions": [
-    "davidanson.vscode-markdownlint",
-    "ecodes.vscode-phpmd",
-    "editorconfig.editorconfig",
-    "esbenp.prettier-vscode",
-    "felixfbecker.php-debug",
-    "higoka.php-cs-fixer",
-    "kokororin.vscode-phpfmt",
-    "mehedidracula.php-namespace-resolver",
-    "sleistner.vscode-fileutils",
-    "sonarsource.sonarlint-vscode",
-    "timonwong.shellcheck",
-    "tyriar.sort-lines",
-    "visualstudioexptteam.vscodeintellicode"
-  ]
+    "name": "PHP",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "webserver",
+    "workspaceFolder": "/srv/webserver",
+    "shutdownAction": "none",
+    "extensions": [
+        "davidanson.vscode-markdownlint",
+        "ecodes.vscode-phpmd",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "felixfbecker.php-debug",
+        "higoka.php-cs-fixer",
+        "kokororin.vscode-phpfmt",
+        "mehedidracula.php-namespace-resolver",
+        "sleistner.vscode-fileutils",
+        "sonarsource.sonarlint-vscode",
+        "timonwong.shellcheck",
+        "tyriar.sort-lines",
+        "visualstudioexptteam.vscodeintellicode"
+    ]
 }

@@ -1,0 +1,16 @@
+name: CI/CD pipeline
+on:
+    push:
+        branches:
+            - "**"
+            # Sluit de default branch uit, aangezien (1) die op GitHub protected is en (2) alle merges daarheen de pipeline al doorlopen hebben (nl. bij pushes naar PR branches).
+            - "!master"
+
+jobs:
+    lint_check:
+        runs-on: ubuntu-18.04
+        steps:
+            - uses: actions/checkout@v1
+            - name: Controleer leesbaarheid
+              run: |
+                  docker run --rm -v (pwd)':/work' tmknom/prettier --list-different .
