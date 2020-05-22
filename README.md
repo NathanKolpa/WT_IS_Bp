@@ -1,16 +1,20 @@
 # Web Technology: Implementation & Security - Beroepsproduct
 
-**Ontwikkel je mee aan dit project**? Zie de [workflow en richtlijnen](/.github/CONTRIBUTING.md).
+🧑‍🏫 **Ontwikkel je mee aan dit project**? Zie de [workflow en richtlijnen](/.github/CONTRIBUTING.md).
 
 ## Inleiding
 
-Dit is een startpunt voor je uitwerking van het beroepsproduct, een website gebaseerd op PHP en SQL Server. Dit project gaat uit van [Visual Studio (VS) Code](https://code.visualstudio.com/docs/getstarted/userinterface).
+Dit is een template voor de uitwerking van het beroepsproduct, een website gebaseerd op PHP en SQL Server. Dit project gaat uit van [Visual Studio (VS) Code](https://code.visualstudio.com/docs/getstarted/userinterface).
 
-## Stappenplan voor start
+### Legenda
+
+🧑‍🏫: alleen voor gevorderden.
+
+## Stappenplan voor de start
 
 Het is belangrijk dat je deze stappen exact in deze volgorde uitvoert om te kunnen beginnen met programmeren.
 
-Voor een beginner zou dit eenmalig een kwartier kunnen duren. Vervolgens, als je alles weg zou gooien, maar met ervaring, 3 minuten.
+Voor een beginner zou dit eenmalig tien minuten kunnen duren. Vervolgens, als je alles weg zou gooien, maar met ervaring, twee minuten.
 
 ### 0. Vereisten
 
@@ -23,33 +27,20 @@ Dat kan op allerlei manieren. De gemakkelijkste is om het project als een ZIP-ar
 
 Zie: [_Cloning a repository using the command line_](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-using-the-command-line), alleen stap 3.
 
-### 2. VS Code: open de workspace
-
-Open het bestand [`/webapplicatie.code-workspace`](/webapplicatie.code-workspace) als workspace.
-Zie: [_Opening workspace files_](https://code.visualstudio.com/docs/editor/multi-root-workspaces#_opening-workspace-files).
-
-### 3. VS Code: installeer de benodigde extensies
-
-Op een gegeven moment krijg je
-
-![de vraag of je de door deze workspace aanbevolen extensies wilt installeren.](img/This_workspace_has_extension_recommendations.png)
-
-Reageer met _Install All_.
-
-### 4. VS Code: open een nieuw venster voor SQL Server 2019
+### 2. VS Code: open een nieuw venster voor SQL Server 🛢️
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
-N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met SQL Server 2019.
+N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met SQL Server.
 
-### 5. VS Code: open de folder `rdbms` in het venster voor SQL Server 2019
+### 3. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️
 
 Via de menubalk bovenaan: _File_ > _Open..._.
 Select de map `rdbms`, dus niet een bestand erbinnen.
 
-### 6. VS Code: activeer de dev container voor SQL Server 2019
+### 4. VS Code: activeer de dev container voor SQL Server 🛢️
 
-Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont. Dit kan de eerste keer tot ca. 10 minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
+Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont. Dit kan de eerste keer tot ca. vijf minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
 
 Op een gegeven moment krijg je
 
@@ -57,15 +48,15 @@ Op een gegeven moment krijg je
 
 Reageer met _Reopen in Container_.
 
-### 7. VS Code: open een nieuw venster voor PHP
+### 5. VS Code: open een nieuw venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
-### 8. VS Code: open de folder `webserver` in het venster voor PHP
+### 6. VS Code: open de folder `webserver` in het venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _Open..._. Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
-### 9. VS Code: activeer de dev container voor PHP
+### 7. VS Code: activeer de dev container voor PHP 📦
 
 Neem ook hier de inleidende opmerking serieus bij de eerdere stap _... activeer de dev container voor SQL Server 2019_.
 
@@ -75,7 +66,26 @@ Op een gegeven moment krijg je
 
 Reageer met _Reopen in Container_.
 
-### 10. Browser: bezoek nu de website op http://127.0.0.1/over
+### 8. Browser: bezoek nu [de website](http://127.0.0.1/over)
+
+## 🧑‍🏫 Stappenplan voor doorontwikkeling
+
+Volg eerst het [stappenplan voor de start](#stappenplan-voor-de-start). Volg vervolgens deze extra stappen.
+
+### 1. VS Code: open de workspace in een nieuw venster
+
+Open het bestand [`/webapplicatie.code-workspace`](/webapplicatie.code-workspace) als workspace (in een nieuw venster).
+Zie: [_Opening workspace files_](https://code.visualstudio.com/docs/editor/multi-root-workspaces#_opening-workspace-files).
+
+### 2. VS Code: installeer de benodigde extensies
+
+Op een gegeven moment krijg je mogelijk
+
+![de vraag of je de door deze workspace aanbevolen extensies wilt installeren.](img/This_workspace_has_extension_recommendations.png)
+
+Reageer in dat geval met _Install All_.
+
+Zie verder [Hoe kan ik versiebeheer met Git gebruiken?](#hoe-kan-ik-versiebeheer-met-git-gebruiken).
 
 ## Vraag en antwoord
 
@@ -85,7 +95,7 @@ Getest is het herstellen van een `.bak`-bestand met een dump van de AdventureWor
 
 ### 1. Browser: download de database dump (eenmalig)
 
-Download de [Adventure Works 2017](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15) database dump vanaf https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak naar de map [`rdbms/`](/rdbms). Sla het bestand op onder de naam `AdventureWorks2017.bak`.
+Download de [Adventure Works 2017](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15) database dump [vanaf GitHub](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak) naar de map [`rdbms/`](/rdbms). Sla het bestand op onder de naam `AdventureWorks2017.bak`.
 
 ### 2. Herhaal het _stappenplan voor start_
 
@@ -93,7 +103,7 @@ Sluit VS Code helemaal af, en herhaal het stappenplan.
 
 (N.B.: Alleen zodra je gevorderd bent in het omgaan met VS Code en dev containers kan je zelf een kortere weg bedenken.)
 
-### 3. VS Code: start de task _Herstel de AdventureWorks-database_ in het venster voor PHP
+### 3. VS Code: start de task _Herstel de AdventureWorks-database_ in de dev container voor PHP 📦
 
 Zorg ervoor dat je in het venster voor PHP bezig bent.
 
@@ -111,9 +121,9 @@ In de dev container [SQL Server 2019](/rdbms/) staat de [SQL Server-extensie voo
 
 Ook kan je [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) gebruiken.
 
-### Hoe kan ik versiebeheer met Git gebruiken?
+### 🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?
 
-Alleen het workspace-venster is daarvoor op dit moment uitgerust (mits je zelf Git al op je computer hebt geïnstalleerd). Ontwikkelen doe je dus in de dev containers oftewel de specifieke vensters, en Git-acties verrichten kan je vervolgens vanuit het workspace-venster.
+Alleen het workspace-venster is daarvoor op dit moment uitgerust (mits je zelf Git al op je computer hebt geïnstalleerd). Ontwikkelen doe je dus in de dev containers oftewel de specifieke vensters, en Git-acties verrichten kan je tegelijkertijd vanuit het workspace-venster.
 
 ## Ontwerp
 
