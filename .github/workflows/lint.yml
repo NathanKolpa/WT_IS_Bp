@@ -1,4 +1,4 @@
-name: CI/CD pipeline
+name: Leesbaarheidscontrole
 on:
     push:
         branches:
@@ -13,4 +13,4 @@ jobs:
             - uses: actions/checkout@v1
             - name: Controleer leesbaarheid
               run: |
-                  docker run --rm -v (pwd)':/work' tmknom/prettier --list-different .
+                  docker run --rm -v "$(pwd)"':/work' tmknom/prettier --check /work
