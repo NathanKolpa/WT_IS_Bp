@@ -6,6 +6,7 @@
   "shutdownAction": "none",
   "remoteUser": "root",
   "extensions": [
+    "davidanson.vscode-markdownlint",
     "editorconfig.editorconfig",
     "sleistner.vscode-fileutils",
     "tyriar.sort-lines",

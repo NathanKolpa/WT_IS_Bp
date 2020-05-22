@@ -1,5 +1,17 @@
 {
-  "workbench.tree.indent": 24,
-  "workbench.startupEditor": "none",
-  "sonarlint.ls.javaHome": "/usr/"
+  "[php]": {
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+  },
+  "editor": {
+    // Stel de verwachte regellengte in, om discussie over leesbaarheid te voorkomen.
+    "rulers": [120],
+    "formatOnSave": true,
+    "defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sonarlint.ls.javaHome": "/usr/",
+  // Maak VS Code zo gebruikersvriendelijk mogelijk.
+  "workbench": {
+    "tree.indent": 24,
+    "startupEditor": "none"
+  }
 }
