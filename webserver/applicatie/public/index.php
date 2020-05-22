@@ -7,8 +7,6 @@ namespace fletnix\index;
 require_once __DIR__ . '/../config/bootstrap.php';
 require_once ROOT_DIR . '/config/db.php';
 
-error_reporting(E_ALL);
-
 switch ($_SERVER['REQUEST_URI']) {
     case '/':
         require_once ROOT_DIR . '/src/views/index.php';

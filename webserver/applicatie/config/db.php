@@ -4,8 +4,6 @@ declare (strict_types = 1);
 
 namespace fletnix\config;
 
-error_reporting(E_ALL);
-
 class Db
 {
     public const HOST = 'rdbms';
