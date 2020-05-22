@@ -1,16 +1,16 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Herstel de AdventureWorks-database",
-      "type": "process",
-      "command": "php",
-      "args": ["-f", "applicatie/src/bin/herstel_db.php"],
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      },
-      "problemMatcher": []
-    }
-  ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Herstel de AdventureWorks-database",
+            "type": "process",
+            "command": "php",
+            "args": ["-f", "applicatie/src/bin/herstel_db.php"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
 }

@@ -1,15 +1,15 @@
 {
-  "name": "SQL Server 2019",
-  "dockerComposeFile": ["docker-compose.yml"],
-  "service": "rdbms",
-  "workspaceFolder": "/srv/rdbms",
-  "shutdownAction": "none",
-  "remoteUser": "root",
-  "extensions": [
-    "davidanson.vscode-markdownlint",
-    "editorconfig.editorconfig",
-    "sleistner.vscode-fileutils",
-    "tyriar.sort-lines",
-    "ms-mssql.mssql"
-  ]
+    "name": "SQL Server 2019",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "rdbms",
+    "workspaceFolder": "/srv/rdbms",
+    "shutdownAction": "none",
+    "remoteUser": "root",
+    "extensions": [
+        "davidanson.vscode-markdownlint",
+        "editorconfig.editorconfig",
+        "sleistner.vscode-fileutils",
+        "tyriar.sort-lines",
+        "ms-mssql.mssql"
+    ]
 }
