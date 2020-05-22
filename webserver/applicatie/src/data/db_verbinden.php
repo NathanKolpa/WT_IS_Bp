@@ -10,8 +10,6 @@ use fletnix\config\Db;
 
 require_once ROOT_DIR . '/config/db.php';
 
-error_reporting(E_ALL);
-
 function verbindDb(string $databaseNaam)
 {
     try

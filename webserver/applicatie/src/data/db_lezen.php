@@ -1,24 +1,20 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types = 1);
 
 namespace fletnix\data;
 
-use PDO;
-
 use fletnix\config\Db;
+use PDO;
 
 require_once __DIR__ . '/../../config/bootstrap.php';
 require_once ROOT_DIR . '/src/data/db_verbinden.php';
-
-error_reporting(E_ALL);
 
 function leesDb()
 {
     $buffer = "<h1>Vendors</h1>";
     $query = "SELECT TOP (100) [Name] FROM Purchasing.Vendor ORDER BY [Name];";
-    try
-    {
+    try {
         $verbinding = verbindDb(Db::DATABASE);
         $pdostatement = $verbinding->prepare($query);
         $pdostatement->execute();
@@ -32,4 +28,3 @@ function leesDb()
     }
     return $buffer;
 }
-?>

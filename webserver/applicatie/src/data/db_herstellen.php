@@ -7,8 +7,6 @@ namespace fletnix\data;
 require_once __DIR__ . '/../../config/bootstrap.php';
 require_once ROOT_DIR . '/src/data/db_verbinden.php';
 
-error_reporting(E_ALL);
-
 function herstelDb()
 {
     try
