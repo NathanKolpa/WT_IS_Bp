@@ -5,12 +5,12 @@
   "workspaceFolder": "/srv/webserver",
   "shutdownAction": "none",
   "extensions": [
+    "davidanson.vscode-markdownlint",
     "ecodes.vscode-phpmd",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "felixfbecker.php-debug",
     "higoka.php-cs-fixer",
-    "hookyqr.beautify",
     "kokororin.vscode-phpfmt",
     "mehedidracula.php-namespace-resolver",
     "sleistner.vscode-fileutils",

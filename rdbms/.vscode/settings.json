@@ -1,4 +1,10 @@
 {
+  "editor": {
+    // Stel de verwachte regellengte in, om discussie over leesbaarheid te voorkomen.
+    "rulers": [120],
+    "formatOnSave": true,
+    "defaultFormatter": "esbenp.prettier-vscode"
+  },
   "mssql.connections": [
     {
       "server": "localhost",
@@ -12,6 +18,9 @@
       "profileName": "Webapplicatie master database"
     }
   ],
-  "workbench.tree.indent": 24,
-  "workbench.startupEditor": "none"
+  // Maak VS Code zo gebruikersvriendelijk mogelijk.
+  "workbench": {
+    "tree.indent": 24,
+    "startupEditor": "none"
+  }
 }
