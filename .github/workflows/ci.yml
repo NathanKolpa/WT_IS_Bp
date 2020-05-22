@@ -1,29 +1,37 @@
-name: CI/CD pipeline
-on: [push]
+name: Tests
+on:
+    push:
+        branches:
+            - "**"
+            # Sluit de default branch uit, aangezien (1) die op GitHub protected is en (2) alle merges daarheen de pipeline al doorlopen hebben (nl. bij pushes naar PR branches).
+            - "!master"
+        paths-ignore:
+            # Veranderingen aan Markdown-documenten hebben nooit een herleidbaar effect op de uitkomst van tests. Bespaar CI-kosten door de tests in dat geval over te slaan.
+            - "**.md"
 
 jobs:
-  describe_environment:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v1
-      - name: Describe environment
-        run: |
-          docker --version
-          docker-compose --version
-  test_rdbms_container:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v1
-      - name: Test rdbms container
-        working-directory: ${{ github.workspace }}/rdbms
-        run: timeout --preserve-status 2m docker-compose up --abort-on-container-exit
-  test_webserver_container:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v1
-      - name: Test webserver container
-        working-directory: ${{ github.workspace }}/webserver
-        run: |
-          # Maak netwerk aan. Dit is specifiek voor CI, aangezien de jobs niet  opeenvolgend lopen. Deze container als tweede starten is wel de bedoeling o.b.v. de README.
-          docker network create webapplicatie
-          timeout --preserve-status 4m docker-compose up --abort-on-container-exit
+    describe_environment:
+        runs-on: ubuntu-18.04
+        steps:
+            - uses: actions/checkout@v1
+            - name: Beschrijf omgeving
+              run: |
+                  docker --version
+                  docker-compose --version
+    test_rdbms_container:
+        runs-on: ubuntu-18.04
+        steps:
+            - uses: actions/checkout@v1
+            - name: Test rdbms-container
+              working-directory: ${{ github.workspace }}/rdbms
+              run: timeout --preserve-status 2m docker-compose up --abort-on-container-exit
+    test_webserver_container:
+        runs-on: ubuntu-18.04
+        steps:
+            - uses: actions/checkout@v1
+            - name: Test webserver-container
+              working-directory: ${{ github.workspace }}/webserver
+              run: |
+                  # Maak netwerk aan. Dit is specifiek voor CI, aangezien de jobs niet  opeenvolgend lopen. Deze container als tweede starten is wel de bedoeling o.b.v. de README.
+                  docker network create webapplicatie
+                  timeout --preserve-status 4m docker-compose up --abort-on-container-exit
