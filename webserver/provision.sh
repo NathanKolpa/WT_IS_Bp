@@ -46,6 +46,20 @@ docker-php-ext-enable pdo_sqlsrv
 pecl install xdebug
 docker-php-ext-enable xdebug
 
+printf '%s\n' 'file_uploads = Off
+allow_url_fopen = Off
+
+[Session]
+session.use_strict_mode = On
+session.use_cookies = On
+session.use_only_cookies = On
+session.cache_limiter = nocache
+session.cookie_httponly = On
+session.cookie_samesite = "Strict"
+session.use_trans_sid = Off
+' >>/usr/local/etc/php/conf.d/security.ini
+
 printf '%s\n' '[XDebug]
 xdebug.remote_enable = 1
-xdebug.remote_autostart = 1' >>/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+xdebug.remote_autostart = 1
+' >>/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
