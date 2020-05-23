@@ -1,0 +1,27 @@
+name: "Tests: n.v.t."
+on:
+    push:
+        branches:
+            - "**"
+            # Sluit de default branch uit, aangezien (1) die op GitHub protected is en (2) alle merges daarheen de pipeline al doorlopen hebben (nl. bij pushes naar PR branches).
+            - "!master"
+
+jobs:
+    describe_environment:
+        runs-on: ubuntu-18.04
+        steps:
+            - name: "Sla over"
+              run: |
+                  true
+    test_rdbms_container:
+        runs-on: ubuntu-18.04
+        steps:
+            - name: "Sla over"
+              run: |
+                  true
+    test_webserver_container:
+        runs-on: ubuntu-18.04
+        steps:
+            - name: "Sla over"
+              run: |
+                  true
