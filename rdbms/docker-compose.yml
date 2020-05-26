@@ -3,9 +3,8 @@ services:
     rdbms:
         environment:
             - ACCEPT_EULA=Y
-            # TODO: (infosec)
-            - SA_PASSWORD=test-password-0nly
             - MSSQL_AGENT_ENABLED=1
+        entrypoint: /srv/rdbms/entrypoint.sh
         image: mcr.microsoft.com/mssql/server:2019-CU4-ubuntu-16.04
         ports:
             - target: "1433"
@@ -23,6 +22,14 @@ services:
               target: /home/mssql/
               volume:
                   nocopy: true
+        secrets:
+            - source: password_rdbms_superuser
+              uid: "0"
+              gid: "0"
+              mode: "0440"
+secrets:
+    password_rdbms_superuser:
+        file: ../password_rdbms_superuser.txt
 volumes:
     home_mssql:
 networks:

@@ -1,43 +1,43 @@
 {
-  "folders": [
-    {
-      "name": "Webapplicatie",
-      "path": "."
+    "folders": [
+        {
+            "name": "Webapplicatie",
+            "path": "."
+        },
+        {
+            "name": "SQL Server 2019",
+            "path": "rdbms"
+        },
+        {
+            "name": "PHP 7.4",
+            "path": "webserver"
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            "davidanson.vscode-markdownlint",
+            "eamodio.gitlens",
+            "editorconfig.editorconfig",
+            "esbenp.prettier-vscode",
+            "foxundermoon.shell-format",
+            "github.vscode-pull-request-github",
+            "ms-vscode-remote.remote-containers",
+            "sleistner.vscode-fileutils",
+            "timonwong.shellcheck",
+            "tyriar.sort-lines",
+            "visualstudioexptteam.vscodeintellicode"
+        ]
     },
-    {
-      "name": "SQL Server 2019",
-      "path": "rdbms"
-    },
-    {
-      "name": "PHP 7.4",
-      "path": "webserver"
+    "settings": {
+        "editor.rulers": [120],
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "files.exclude": {
+            "**/.DS_Store": true,
+            "**/.git": true
+        },
+        // Maak VS Code zo gebruikersvriendelijk mogelijk.
+        "workbench.tree.indent": 24,
+        "workbench.startupEditor": "none"
     }
-  ],
-  "extensions": {
-    "recommendations": [
-      "davidanson.vscode-markdownlint",
-      "eamodio.gitlens",
-      "editorconfig.editorconfig",
-      "esbenp.prettier-vscode",
-      "foxundermoon.shell-format",
-      "github.vscode-pull-request-github",
-      "ms-vscode-remote.remote-containers",
-      "sleistner.vscode-fileutils",
-      "timonwong.shellcheck",
-      "tyriar.sort-lines",
-      "visualstudioexptteam.vscodeintellicode"
-    ]
-  },
-  "settings": {
-    "editor.rulers": [120],
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "files.exclude": {
-      "**/.DS_Store": true,
-      "**/.git": true
-    },
-    // Maak VS Code zo gebruikersvriendelijk mogelijk.
-    "workbench.tree.indent": 24,
-    "workbench.startupEditor": "none"
-  }
 }

@@ -7,6 +7,8 @@ namespace fletnix\views\test_db;
 use function fletnix\data\leesDb;
 
 require_once ROOT_DIR . '/src/data/db_lezen.php';
+
+$data = leesDb();
 ?>
 <!doctype html>
 <html lang="nl">
@@ -18,7 +20,7 @@ require_once ROOT_DIR . '/src/data/db_lezen.php';
 <body>
     <article>
         <?php
-echo leesDb();
+echo $data;
 ?>
     </article>
 </body>

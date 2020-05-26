@@ -4,31 +4,69 @@ declare (strict_types = 1);
 
 namespace fletnix\data;
 
+use fletnix\config\Db;
+use function fletnix\data\printPdoError;
+use PDOException;
+use RuntimeException;
+
 require_once __DIR__ . '/../../config/bootstrap.php';
 require_once ROOT_DIR . '/src/data/db_verbinden.php';
 
-function herstelDb()
+function herstelDb(string $passwordRdbmsSuperuser)
 {
-    try
-    {
-        $verbinding = verbindDb('master');
-        $query = "SET NOCOUNT ON;
-            RESTORE DATABASE [AdventureWorks]
-            FROM DISK = N'/srv/rdbms/AdventureWorks2017.bak'
-            WITH MOVE 'AdventureWorks2017'
-            TO '/var/opt/mssql/data/AdventureWorks2017.mdf',
-            MOVE 'AdventureWorks2017_log'
-            TO '/var/opt/mssql/data/AdventureWorks2017.ldf', REPLACE, RECOVERY, STATS = 10;";
+    try {
+        $verbinding = verbindDb('master', 'sa', $passwordRdbmsSuperuser);
+    } finally {
+        unset($passwordRdbmsSuperuser);
+    }
+    // TODO: Hardcode geen namen van logins, databases etc. Dit is nu helaas nodig omdat SQL Server driver voor PDO onvoldoende variabelen accepteert.
+    $query = "DROP DATABASE IF EXISTS [AdventureWorks], [" . Db::DATABASE . "];
+        SET NOCOUNT ON;
+        RESTORE DATABASE [AdventureWorks]
+        FROM DISK = N'/srv/rdbms/AdventureWorks2017.bak'
+        WITH MOVE 'AdventureWorks2017'
+        TO '/var/opt/mssql/data/AdventureWorks2017.mdf',
+        MOVE 'AdventureWorks2017_log'
+        TO '/var/opt/mssql/data/AdventureWorks2017.ldf', REPLACE, RECOVERY, STATS = 10;
+        ALTER DATABASE [AdventureWorks] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
+        ALTER DATABASE [AdventureWorks] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+        ALTER DATABASE [AdventureWorks] MODIFY NAME = [" . Db::DATABASE . "];";
+    try {
         $pdostatement = $verbinding->prepare($query);
         if (!$pdostatement->execute()) {
-            error_log(__FILE__ . ":" . __LINE__ . ": " . json_encode($pdostatement->errorInfo()) . "\n");
-            throw Exception("Kon PDO Statement niet uitvoeren. ");
+            printPdoError($pdostatement);
+            throw new RuntimeException("Uitvoering PDO-statement mislukt. ", 0);
         }
-        while ($pdostatement->nextRowset()) {
-            error_log(__FILE__ . ":" . __LINE__ . ": Status: " . json_encode($pdostatement->errorInfo()) . "\n");
+    } catch (PDOException $fout) {
+        printPdoError($pdostatement);
+        throw new RuntimeException("Kon PDO-statement niet uitvoeren. ", 0, $fout);
+    }
+    while ($pdostatement->nextRowset()) {
+        error_log(json_encode($pdostatement->errorInfo(), JSON_INVALID_UTF8_SUBSTITUTE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+    }
+    unset($pdostatement);
+    $passwordRdbmsApp = rtrim(file_get_contents('/run/secrets/password_rdbms_app', true));
+    if (!$passwordRdbmsApp) {
+        throw new RuntimeException("Kon app-wachtwoord (SQL Server) niet uitlezen. ");
+    }
+    $queryVoeggebruikertoe = "USE [" . Db::DATABASE . "];
+        CREATE LOGIN " . Db::LOGIN . " WITH PASSWORD = " . $verbinding->quote($passwordRdbmsApp) . ";
+        CREATE USER " . Db::LOGIN . ";
+        ALTER ROLE db_datareader ADD MEMBER " . Db::LOGIN . ";
+        ALTER ROLE db_datawriter ADD MEMBER " . Db::LOGIN . ";
+        ALTER DATABASE [" . Db::DATABASE . "] SET MULTI_USER;";
+    unset($passwordRdbmsApp);
+    try {
+        $pdostatementVoeggebruikertoe = $verbinding->prepare($queryVoeggebruikertoe);
+        if (!$pdostatementVoeggebruikertoe->execute()) {
+            unset($queryVoeggebruikertoe);
+            printPdoError($pdostatement);
+            throw new RuntimeException("Uitvoering PDO-statement mislukt. ");
         }
-        $pdostatement = null;
-    } catch (Exception $fout) {
-        error_log(__FILE__ . ":" . __LINE__ . ": " . json_encode($fout) . "\n");
+    } catch (PDOException $fout) {
+        printPdoError($pdostatement);
+        throw new RuntimeException("Kon PDO-statement niet uitvoeren. ", 0, $fout);
+    } finally {
+        unset($queryVoeggebruikertoe);
     }
 }
