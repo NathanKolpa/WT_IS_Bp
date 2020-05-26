@@ -36,7 +36,7 @@ function leesDb()
         throw new RuntimeException("Kon PDO-statement niet uitvoeren. ", 0, $fout);
     }
     while ($rij = $pdostatement->fetch(PDO::FETCH_LAZY)) {
-        $buffer .= $rij['Name'];
+        $buffer .= htmlentities($rij['Name']);
         $buffer .= "<br/>";
     }
     unset($pdostatement);
