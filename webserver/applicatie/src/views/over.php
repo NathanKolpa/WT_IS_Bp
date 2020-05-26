@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare (strict_types = 1);
 
 namespace fletnix\views\over;
 
@@ -14,7 +14,7 @@ namespace fletnix\views\over;
 
 <body>
     <article>
-        <h1>Over fletnix</h1>
+        <h1>Over Fletnix</h1>
         <p>Fletnix is ...</p>
     </article>
 </body>
