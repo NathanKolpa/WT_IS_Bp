@@ -9,11 +9,10 @@
             "database": "",
             "authenticationType": "SqlLogin",
             "user": "SA",
-            // TODO: (infosec)
-            "password": "test-password-0nly",
+            "password": "",
             "emptyPasswordInput": false,
             "savePassword": false,
-            "profileName": "Webapplicatie master database"
+            "profileName": "Webapplicatie (master database)"
         }
     ],
     // Maak VS Code zo gebruikersvriendelijk mogelijk.
