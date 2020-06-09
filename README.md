@@ -42,12 +42,20 @@ Via de menubalk bovenaan: _File_ > _New Window_.
 
 N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met SQL Server.
 
-### 4. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️
+### 4. VS Code: installeer de benodigde extensies
+
+Op een gegeven moment krijg je mogelijk
+
+![de vraag of je de door deze workspace aanbevolen extensies wilt installeren.](img/This_workspace_has_extension_recommendations.png)
+
+Reageer in dat geval met _Install All_.
+
+### 5. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️
 
 Via de menubalk bovenaan: _File_ > _Open..._.
 Select de map `rdbms`, dus niet een bestand erbinnen.
 
-### 5. VS Code: activeer de dev container voor SQL Server 🛢️
+### 6. VS Code: activeer de dev container voor SQL Server 🛢️
 
 Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont. Dit kan de eerste keer tot ca. vijf minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
 
@@ -57,15 +65,15 @@ Op een gegeven moment krijg je
 
 Reageer met _Reopen in Container_.
 
-### 6. VS Code: open een nieuw venster voor PHP 📦
+### 7. VS Code: open een nieuw venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
-### 7. VS Code: open de folder `webserver` in het venster voor PHP 📦
+### 8. VS Code: open de folder `webserver` in het venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _Open..._. Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
-### 8. VS Code: activeer de dev container voor PHP 📦
+### 9. VS Code: activeer de dev container voor PHP 📦
 
 Neem ook hier de inleidende opmerking serieus bij de eerdere stap _... activeer de dev container voor SQL Server 2019_.
 
@@ -75,7 +83,7 @@ Op een gegeven moment krijg je
 
 Reageer met _Reopen in Container_.
 
-### 9. Browser: bezoek nu [de website](http://127.0.0.1/over)
+### 10. Browser: bezoek nu [de website](http://127.0.0.1/over)
 
 ## 🧑‍🏫 Stappenplan voor doorontwikkeling
 
