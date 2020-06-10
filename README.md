@@ -20,6 +20,8 @@ Voor een beginner zou dit eenmalig tien minuten kunnen duren. Vervolgens, als je
 
 -   Installeer [VS Code](https://code.visualstudio.com/).
 -   Installeer Docker. Dit project is getest met de variant [Docker Desktop](https://www.docker.com/products/docker-desktop).
+    -   Stel niet minder dan de standaardwaarde aan RAM-geheugen in: 2 GiB.
+    -   Houd verder rekening met ca. 5 GiB aan benodigde opslagruimte.
 
 ### 1. GitHub: Haal een kopie van dit project binnen
 
@@ -31,10 +33,11 @@ Zie: [_Cloning a repository using the command line_](https://help.github.com/en/
 
 > Secrets, zoals database-wachtwoorden, worden in dit template veilig gebruikt. Om dat mogelijk te maken is wel een handeling van jou vereist.
 
-1. Maak in de hoofdmap van het project twee bestanden aan:
+1. Maak in de hoofdmap van het project twee bestanden aan met VS Code:
     - `password_rdbms_app.txt`
     - `password_rdbms_superuser.txt`
 1. Vul beide bestanden met [veilige wachtwoorden](https://docs.microsoft.com/nl-nl/sql/relational-databases/security/password-policy?view=sql-server-ver15).
+1. Eindig beide bestanden met een witregel.
 
 ### 3. VS Code: open een nieuw venster voor SQL Server 🛢️
 
@@ -42,7 +45,12 @@ Via de menubalk bovenaan: _File_ > _New Window_.
 
 N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met SQL Server.
 
-### 4. VS Code: installeer de benodigde extensies
+### 4. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️
+
+Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
+Selecteer de map `rdbms`, dus niet een bestand erbinnen.
+
+### 5. VS Code: installeer de benodigde extensies
 
 Op een gegeven moment krijg je mogelijk
 
@@ -50,20 +58,31 @@ Op een gegeven moment krijg je mogelijk
 
 Reageer in dat geval met _Install All_.
 
-### 5. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️
-
-Via de menubalk bovenaan: _File_ > _Open..._.
-Select de map `rdbms`, dus niet een bestand erbinnen.
-
 ### 6. VS Code: activeer de dev container voor SQL Server 🛢️
-
-Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont. Dit kan de eerste keer tot ca. vijf minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
 
 Op een gegeven moment krijg je
 
 ![de vraag of je de dev container binnen deze map wilt activeren.](img/Folder_contains_a_dev_configuration_file_Reopen_folder_to_develop_in_a_container.png)
 
 Reageer met _Reopen in Container_.
+
+Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont. Dit kan de eerste keer tot ca. vijf minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
+
+#### Bijzonderheden bij Windows
+
+Als je Windows gebruikt, kan je een aantal dialoogvensters krijgen.
+
+##### Sta Docker netwerkverkeer toe (Windows Firewall)
+
+![de vraag of je Docker netwerkverkeer wilt toestaan.](img/Windows_Security_Alert.png)
+Kies _Allow access_.
+
+De suggestie dat Docker op publieke netwerken actief zou mogen worden komt door [een bekende beperking in Docker](https://github.com/docker/for-win/issues/367).
+
+##### Geef de dev container toegang tot bestanden (Docker Desktop)
+
+![de vraag of je de dev container toegang wilt geven tot bestanden.](img/Docker_Desktop_-_Filesharing.png)
+Kies telkens _Share it_. Doe dit onmiddellijk, want als je te lang wacht kan het stappenplan mis gaan.
 
 ### 7. VS Code: open een nieuw venster voor PHP 📦
 
@@ -71,19 +90,16 @@ Via de menubalk bovenaan: _File_ > _New Window_.
 
 ### 8. VS Code: open de folder `webserver` in het venster voor PHP 📦
 
-Via de menubalk bovenaan: _File_ > _Open..._. Selecteer de map `webserver`, dus niet een bestand erbinnen.
+Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
+Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
 ### 9. VS Code: activeer de dev container voor PHP 📦
 
-Neem ook hier de inleidende opmerking serieus bij de eerdere stap _... activeer de dev container voor SQL Server 2019_.
-
-Op een gegeven moment krijg je
-
-![de vraag of je de dev container binnen deze map wilt activeren.](img/Folder_contains_a_dev_configuration_file_Reopen_folder_to_develop_in_a_container.png)
-
-Reageer met _Reopen in Container_.
+(Deze instructies zijn gelijk aan de vorige stap genaamd _VS Code: activeer de dev container ..._.)
 
 ### 10. Browser: bezoek nu [de website](http://127.0.0.1/over)
+
+Deze pagina werkt. Sommige andere pagina's, die RDBMS gebruiken, mogelijk niet. Daarvoor moet je eerst de stappen [Hoe kan ik de database vullen?](#hoe-kan-ik-de-database-vullen) uitvoeren.
 
 ## 🧑‍🏫 Stappenplan voor doorontwikkeling
 
