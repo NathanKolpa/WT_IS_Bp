@@ -50,6 +50,8 @@ N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met 
 Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
 Selecteer de map `rdbms`, dus niet een bestand erbinnen.
 
+📙 Als het goed is ziet dit nieuwe venster er oranjebruin uit.
+
 ### 5. VS Code: installeer de benodigde extensies
 
 Op een gegeven moment krijg je mogelijk
@@ -92,6 +94,8 @@ Via de menubalk bovenaan: _File_ > _New Window_.
 
 Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
 Selecteer de map `webserver`, dus niet een bestand erbinnen.
+
+📗 Als het goed is ziet dit nieuwe venster er groen uit.
 
 ### 9. VS Code: activeer de dev container voor PHP 📦
 
