@@ -1,6 +1,6 @@
 {
     "[php]": {
-        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
     },
     // Stel de verwachte regellengte in, om discussie over leesbaarheid te voorkomen.
     "editor.rulers": [120],

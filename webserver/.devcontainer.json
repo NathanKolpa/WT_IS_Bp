@@ -11,7 +11,7 @@
         "esbenp.prettier-vscode",
         "felixfbecker.php-debug",
         "higoka.php-cs-fixer",
-        "kokororin.vscode-phpfmt",
+        "bmewburn.vscode-intelephense-client",
         "mehedidracula.php-namespace-resolver",
         "sleistner.vscode-fileutils",
         "sonarsource.sonarlint-vscode",
