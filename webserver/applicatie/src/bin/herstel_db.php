@@ -8,7 +8,7 @@ use function fletnix\data\herstelDb;
 if ($argc != 1) {
     ?>
 
-Dit is een command line PHP-script dat de AdventureWorks database herstelt. Het ontvangt het wachtwoord van de SA voor de SQL Server RDBMS via standard input.
+Dit is een command line PHP-script dat de MYIMDB database herstelt. Het ontvangt het wachtwoord van de SA voor de SQL Server RDBMS via standard input.
 
 Aanroep:
     php ./<?php echo $argv[0]; ?>

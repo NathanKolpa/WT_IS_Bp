@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Herstel de AdventureWorks-database",
+            "label": "Herstel de Fletnix-database",
             "type": "process",
             "command": "sh",
             "args": [

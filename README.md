@@ -128,11 +128,11 @@ Zie verder [Hoe kan ik versiebeheer met Git gebruiken?](#hoe-kan-ik-versiebeheer
 
 ### Hoe kan ik de database vullen?
 
-Getest is het herstellen van een `.bak`-bestand met een dump van de AdventureWorks-voorbeelddatabase.
+Getest is het herstellen van een `.bak`-bestand met een dump van de Fletnix-database.
 
-### 1. Browser: download de database dump (eenmalig)
+### 1. Browser: download de databasebackup (eenmalig)
 
-Download de [Adventure Works 2017](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15) database dump [vanaf GitHub](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak) naar de map [`rdbms/`](/rdbms). Sla het bestand op onder de naam `AdventureWorks2017.bak`.
+Download de [Fletnix-databasebackup vanaf GitHub](https://github.com/HANICA/WT_IS_Bp/releases/download/0.1.0/FLETNIX.bak.zip) naar de map [`rdbms/`](/rdbms). Pak het bestand daar uit, en stel vast dat de naam inderdaad `FLETNIX.bak` is.
 
 ### 2. Herhaal het _stappenplan voor start_
 
@@ -140,7 +140,7 @@ Sluit VS Code helemaal af, en herhaal het stappenplan.
 
 (N.B.: Alleen zodra je gevorderd bent in het omgaan met VS Code en dev containers kan je zelf een kortere weg bedenken.)
 
-### 3. VS Code: start de task _Herstel de AdventureWorks-database_ in de dev container voor PHP 📦
+### 3. VS Code: start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦
 
 Zorg ervoor dat je in het venster voor PHP bezig bent.
 
@@ -148,9 +148,9 @@ Kies Menubalk > _Terminal_ > _Run Task..._.
 
 ![Menubalk > _Terminal_ > _Run Task..._.](img/Menu_Terminal_Run_Task.png)
 
-Kies vervolgens _Herstel de AdventureWorks-database_.
+Kies vervolgens _Herstel de Fletnix-database_.
 
-![_Herstel de AdventureWorks-database_](img/Herstel_de_AdventureWorks-database.png)
+![_Herstel de Fletnix-database_](img/Herstel_Fletnix_database.png)
 
 ### Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?
 
