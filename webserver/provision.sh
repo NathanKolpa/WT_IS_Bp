@@ -62,4 +62,6 @@ session.use_trans_sid = Off
 printf '%s\n' '[XDebug]
 xdebug.remote_enable = 1
 xdebug.remote_autostart = 1
+# Required to extend beyond localhost, because of Docker networking.
+xdebug.remote_host = "0.0.0.0"
 ' >>/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini

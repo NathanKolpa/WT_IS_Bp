@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types = 1);
 
 namespace fletnix\utils;
 
@@ -23,11 +23,12 @@ function exceptionHandler(Throwable $fout)
             }
         }
     }
-    error_log("Fout (op volgorde van eind naar begin): " .
+    error_log("\nFout (op volgorde van eind naar begin): " .
         json_encode($backtrace, JSON_INVALID_UTF8_SUBSTITUTE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+    error_log($fout->getMessage());
     http_response_code(500);
     header('Content-type: text/plain;charset=utf-8');
-    echo "Er is helaas een fout opgetreden. ";
+    echo "Er is helaas een fatale fout opgetreden.";
 }
 
 set_error_handler('\fletnix\utils\errorHandler');

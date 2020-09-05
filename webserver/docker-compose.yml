@@ -14,10 +14,6 @@ services:
               published: "80"
               protocol: tcp
               mode: bridge
-            - target: "9000"
-              published: "9000"
-              protocol: tcp
-              mode: bridge
         healthcheck:
             test: ["CMD", "curl", "-f", "http://127.0.0.1"]
             interval: 1m30s
