@@ -1,5 +1,36 @@
 # Web Technology: Implementation & Security - Beroepsproduct
 
+- [Web Technology: Implementation & Security - Beroepsproduct](#web-technology-implementation--security---beroepsproduct)
+  - [Inleiding](#inleiding)
+    - [Legenda](#legenda)
+  - [Stappenplan voor de start](#stappenplan-voor-de-start)
+    - [0. Vereisten](#0-vereisten)
+    - [1. GitHub: Haal een kopie van dit project binnen](#1-github-haal-een-kopie-van-dit-project-binnen)
+    - [2: VS Code: maak de secrets aan](#2-vs-code-maak-de-secrets-aan)
+    - [3. VS Code: open een nieuw venster voor SQL Server 🛢️](#3-vs-code-open-een-nieuw-venster-voor-sql-server-️)
+    - [4. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️](#4-vs-code-open-de-folder-rdbms-in-het-venster-voor-sql-server-️)
+    - [5. VS Code: installeer de benodigde extensies](#5-vs-code-installeer-de-benodigde-extensies)
+    - [6. VS Code: activeer de dev container voor SQL Server 🛢️](#6-vs-code-activeer-de-dev-container-voor-sql-server-️)
+      - [Bijzonderheden bij Windows](#bijzonderheden-bij-windows)
+        - [Sta Docker netwerkverkeer toe (Windows Firewall)](#sta-docker-netwerkverkeer-toe-windows-firewall)
+        - [Geef de dev container toegang tot bestanden (Docker Desktop)](#geef-de-dev-container-toegang-tot-bestanden-docker-desktop)
+    - [7. VS Code: open een nieuw venster voor PHP 📦](#7-vs-code-open-een-nieuw-venster-voor-php-)
+    - [8. VS Code: open de folder `webserver` in het venster voor PHP 📦](#8-vs-code-open-de-folder-webserver-in-het-venster-voor-php-)
+    - [9. VS Code: activeer de dev container voor PHP 📦](#9-vs-code-activeer-de-dev-container-voor-php-)
+    - [10. Browser: bezoek nu de website](#10-browser-bezoek-nu-de-website)
+  - [🧑‍🏫 Stappenplan voor doorontwikkeling](#-stappenplan-voor-doorontwikkeling)
+    - [1. VS Code: open de workspace in een nieuw venster](#1-vs-code-open-de-workspace-in-een-nieuw-venster)
+    - [2. VS Code: installeer de benodigde extensies](#2-vs-code-installeer-de-benodigde-extensies)
+  - [Vraag en antwoord](#vraag-en-antwoord)
+    - [Hoe kan ik de database vullen?](#hoe-kan-ik-de-database-vullen)
+    - [1. Browser: download de databasebackup (eenmalig)](#1-browser-download-de-databasebackup-eenmalig)
+    - [2. Herhaal het _stappenplan voor start_](#2-herhaal-het-stappenplan-voor-start)
+    - [3. VS Code: start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦](#3-vs-code-start-de-task-herstel-de-fletnix-database-in-de-dev-container-voor-php-)
+    - [Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?](#hoe-kan-ik-dingen-uitproberen-en-uitzoeken-aan-de-database-buiten-php-om)
+    - [Hoe bekijk ik de logboeken van de containers?](#hoe-bekijk-ik-de-logboeken-van-de-containers)
+    - [🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?](#-hoe-kan-ik-versiebeheer-met-git-gebruiken)
+  - [Ontwerp](#ontwerp)
+
 🧑‍🏫 **Ontwikkel je mee aan dit project**? Zie de [workflow en richtlijnen](/.github/CONTRIBUTING.md).
 
 ## Inleiding
