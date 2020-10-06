@@ -25,7 +25,8 @@
             "sleistner.vscode-fileutils",
             "timonwong.shellcheck",
             "tyriar.sort-lines",
-            "visualstudioexptteam.vscodeintellicode"
+            "visualstudioexptteam.vscodeintellicode",
+            "yzhang.markdown-all-in-one"
         ]
     },
     "settings": {
