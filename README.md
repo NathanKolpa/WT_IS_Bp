@@ -23,9 +23,9 @@
     - [2. VS Code: installeer de benodigde extensies](#2-vs-code-installeer-de-benodigde-extensies)
   - [Vraag en antwoord](#vraag-en-antwoord)
     - [Hoe kan ik de database vullen?](#hoe-kan-ik-de-database-vullen)
-    - [1. Browser: download de databasebackup (eenmalig)](#1-browser-download-de-databasebackup-eenmalig)
-    - [2. Herhaal het _stappenplan voor start_](#2-herhaal-het-stappenplan-voor-start)
-    - [3. VS Code: start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦](#3-vs-code-start-de-task-herstel-de-fletnix-database-in-de-dev-container-voor-php-)
+      - [1. Browser: download de databasebackup (eenmalig)](#1-browser-download-de-databasebackup-eenmalig)
+      - [2. Herhaal het _stappenplan voor start_](#2-herhaal-het-stappenplan-voor-start)
+      - [3. VS Code: start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦](#3-vs-code-start-de-task-herstel-de-fletnix-database-in-de-dev-container-voor-php-)
     - [Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?](#kan-ik-sql-server-ook-nog-buiten-docker-om-draaien-op-de-docker-host)
     - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
     - [Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?](#hoe-kan-ik-dingen-uitproberen-en-uitzoeken-aan-de-database-buiten-php-om)
@@ -161,17 +161,17 @@ Zie verder [Hoe kan ik versiebeheer met Git gebruiken?](#hoe-kan-ik-versiebeheer
 
 Getest is het herstellen van een `.bak`-bestand met een dump van de Fletnix-database.
 
-### 1. Browser: download de databasebackup (eenmalig)
+#### 1. Browser: download de databasebackup (eenmalig)
 
 Download de [Fletnix-databasebackup vanaf GitHub](https://github.com/HANICA/WT_IS_Bp/releases/download/0.1.0/FLETNIX.bak.zip) naar de map [`rdbms/`](/rdbms). Pak het bestand daar uit, en stel vast dat de naam inderdaad `FLETNIX.bak` is.
 
-### 2. Herhaal het _stappenplan voor start_
+#### 2. Herhaal het _stappenplan voor start_
 
 Sluit VS Code helemaal af, en herhaal het stappenplan.
 
 (N.B.: Alleen zodra je gevorderd bent in het omgaan met VS Code en dev containers kan je zelf een kortere weg bedenken.)
 
-### 3. VS Code: start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦
+#### 3. VS Code: start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦
 
 Zorg ervoor dat je in het venster voor PHP bezig bent.
 
