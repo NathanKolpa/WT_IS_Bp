@@ -26,6 +26,8 @@
     - [1. Browser: download de databasebackup (eenmalig)](#1-browser-download-de-databasebackup-eenmalig)
     - [2. Herhaal het _stappenplan voor start_](#2-herhaal-het-stappenplan-voor-start)
     - [3. VS Code: start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦](#3-vs-code-start-de-task-herstel-de-fletnix-database-in-de-dev-container-voor-php-)
+    - [Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?](#kan-ik-sql-server-ook-nog-buiten-docker-om-draaien-op-de-docker-host)
+    - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
     - [Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?](#hoe-kan-ik-dingen-uitproberen-en-uitzoeken-aan-de-database-buiten-php-om)
     - [Hoe bekijk ik de logboeken van de containers?](#hoe-bekijk-ik-de-logboeken-van-de-containers)
     - [🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?](#-hoe-kan-ik-versiebeheer-met-git-gebruiken)
@@ -43,7 +45,7 @@ Dit is een template voor de uitwerking van het beroepsproduct, een website gebas
 
 ## Stappenplan voor de start
 
-Het is belangrijk dat je deze stappen exact in deze volgorde uitvoert om te kunnen beginnen met programmeren.
+Het is belangrijk dat je deze stappen exact in deze volgorde en volledig uitvoert om te kunnen beginnen met programmeren.
 
 Voor een beginner zou dit eenmalig tien minuten kunnen duren. Vervolgens, als je alles weg zou gooien, maar met ervaring, twee minuten.
 
@@ -65,8 +67,8 @@ Download dit project als een ZIP-archief. Zie [_Cloning a repository using the c
 1. Maak in de hoofdmap van het project twee bestanden aan met VS Code:
     - `password_rdbms_app.txt`
     - `password_rdbms_superuser.txt`
-1. Vul beide bestanden met [veilige wachtwoorden](https://docs.microsoft.com/nl-nl/sql/relational-databases/security/password-policy?view=sql-server-ver15).
-1. Eindig beide bestanden met een witregel.
+2. Vul beide bestanden met [veilige wachtwoorden](https://docs.microsoft.com/nl-nl/sql/relational-databases/security/password-policy?view=sql-server-ver15). ⚠️ Als het wachtwoord niet voldoet aan deze vereisten zal de RDBMS niet starten en krijg je vreemde problemen.
+3. Eindig beide bestanden met een witregel.
 
 ### 3. VS Code: open een nieuw venster voor SQL Server 🛢️
 
@@ -180,6 +182,14 @@ Kies Menubalk > _Terminal_ > _Run Task..._.
 Kies vervolgens _Herstel de Fletnix-database_.
 
 ![_Herstel de Fletnix-database_](img/Herstel_Fletnix_database.png)
+
+### Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?
+
+Ja, maar dit kan vreemde effecten geven als je op de Docker host zelf, buiten VS Code om, met bijv. SQL Server Management Studio probeert te verbinden met de RDBMS-container. Zie [`rdbms/docker-compose.yml`](rdbms/docker-compose.yml). Het is meestal verstandig om alle overige SQL Server instanties te stoppen tijdens je werk aan dit project.
+
+### Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?
+
+Ja, maar dat is meestal onverstandig. Zie het antwoord op de voorgaande vraag. Je kan dit doen door de sleutel `published` te veranderen in [`rdbms/docker-compose.yml`](rdbms/docker-compose.yml).
 
 ### Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?
 
