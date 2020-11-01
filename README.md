@@ -56,9 +56,7 @@ Voor een beginner zou dit eenmalig tien minuten kunnen duren. Vervolgens, als je
 
 ### 1. GitHub: Haal een kopie van dit project binnen
 
-Clone dit project via [deze link](vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2FHANICA%2FWT_IS_Bp). Je wordt gevraagd om een map te kiezen waarin je het project wilt bewaren.
-
-Alternatief kan je dit project als een ZIP-archief downloaden. Zie [_Cloning a repository using the command line_](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-using-the-command-line), alleen stap 3.
+Download dit project als een ZIP-archief. Zie [_Cloning a repository using the command line_](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-using-the-command-line), alleen stap 3.
 
 ### 2: VS Code: maak de secrets aan
 
