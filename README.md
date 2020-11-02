@@ -34,7 +34,10 @@
     - [🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?](#-hoe-kan-ik-versiebeheer-met-git-gebruiken)
   - [Ontwerp](#ontwerp)
 
-🧑‍🏫 **Ontwikkel je mee aan dit project**? Zie de [workflow en richtlijnen](/.github/CONTRIBUTING.md).
+- 🧑‍🏫 **Ontwikkel je mee aan dit project**? Zie de [workflow en richtlijnen](/.github/CONTRIBUTING.md).
+- 👩‍🎓 **Ben je student**? Houd je uitwerking van het beroepsproduct strikt privé! Gebruik zelf geen GitHub. Als je zelf toch GitHub gebruikt moet je zeker weten dat je uitwerking helemaal afgeschermd is.
+
+---
 
 ## Inleiding
 
