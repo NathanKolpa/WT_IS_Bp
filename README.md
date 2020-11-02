@@ -6,18 +6,19 @@
   - [Stappenplan voor de start](#stappenplan-voor-de-start)
     - [0. Vereisten](#0-vereisten)
     - [1. GitHub: Haal een kopie van dit project binnen](#1-github-haal-een-kopie-van-dit-project-binnen)
-    - [2: VS Code: maak de secrets aan](#2-vs-code-maak-de-secrets-aan)
-    - [3. VS Code: open een nieuw venster voor SQL Server 🛢️](#3-vs-code-open-een-nieuw-venster-voor-sql-server-️)
-    - [4. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️](#4-vs-code-open-de-folder-rdbms-in-het-venster-voor-sql-server-️)
-    - [5. VS Code: installeer de benodigde extensies](#5-vs-code-installeer-de-benodigde-extensies)
-    - [6. VS Code: activeer de dev container voor SQL Server 🛢️](#6-vs-code-activeer-de-dev-container-voor-sql-server-️)
+    - [2: VS Code: installeer de EditorConfig](#2-vs-code-installeer-de-editorconfig)
+    - [3: VS Code: maak de secrets aan](#3-vs-code-maak-de-secrets-aan)
+    - [4. VS Code: open een nieuw venster voor SQL Server 🛢️](#4-vs-code-open-een-nieuw-venster-voor-sql-server-️)
+    - [5. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️](#5-vs-code-open-de-folder-rdbms-in-het-venster-voor-sql-server-️)
+    - [6. VS Code: installeer de benodigde extensies](#6-vs-code-installeer-de-benodigde-extensies)
+    - [7. VS Code: activeer de dev container voor SQL Server 🛢️](#7-vs-code-activeer-de-dev-container-voor-sql-server-️)
       - [Bijzonderheden bij Windows](#bijzonderheden-bij-windows)
         - [Sta Docker netwerkverkeer toe (Windows Firewall)](#sta-docker-netwerkverkeer-toe-windows-firewall)
         - [Geef de dev container toegang tot bestanden (Docker Desktop)](#geef-de-dev-container-toegang-tot-bestanden-docker-desktop)
-    - [7. VS Code: open een nieuw venster voor PHP 📦](#7-vs-code-open-een-nieuw-venster-voor-php-)
-    - [8. VS Code: open de folder `webserver` in het venster voor PHP 📦](#8-vs-code-open-de-folder-webserver-in-het-venster-voor-php-)
-    - [9. VS Code: activeer de dev container voor PHP 📦](#9-vs-code-activeer-de-dev-container-voor-php-)
-    - [10. Browser: bezoek nu de website](#10-browser-bezoek-nu-de-website)
+    - [8. VS Code: open een nieuw venster voor PHP 📦](#8-vs-code-open-een-nieuw-venster-voor-php-)
+    - [9. VS Code: open de folder `webserver` in het venster voor PHP 📦](#9-vs-code-open-de-folder-webserver-in-het-venster-voor-php-)
+    - [10. VS Code: activeer de dev container voor PHP 📦](#10-vs-code-activeer-de-dev-container-voor-php-)
+    - [11. Browser: bezoek nu de website](#11-browser-bezoek-nu-de-website)
   - [🧑‍🏫 Stappenplan voor doorontwikkeling](#-stappenplan-voor-doorontwikkeling)
     - [1. VS Code: open de workspace in een nieuw venster](#1-vs-code-open-de-workspace-in-een-nieuw-venster)
     - [2. VS Code: installeer de benodigde extensies](#2-vs-code-installeer-de-benodigde-extensies)
@@ -60,7 +61,13 @@ Voor een beginner zou dit eenmalig tien minuten kunnen duren. Vervolgens, als je
 
 Download dit project als een ZIP-archief. Zie [_Cloning a repository using the command line_](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-using-the-command-line), alleen stap 3.
 
-### 2: VS Code: maak de secrets aan
+### 2: VS Code: installeer de EditorConfig
+
+Doordat iedereen een verschillend besturingssysteem gebruikt kunnen er problemen met het opslaan van bestanden ontstaan. EditorConfig is een standaard die bepaalt hoe bestanden moeten worden opgeslagen.
+
+Installeer de [EditorConfig-extensie](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) in VS Code. Klik daarvoor op de groene knop ‘Install’ bovenaan de webpagina.
+
+### 3: VS Code: maak de secrets aan
 
 > Secrets, zoals database-wachtwoorden, worden in dit template veilig gebruikt. Om dat mogelijk te maken is wel een handeling van jou vereist.
 
@@ -70,20 +77,20 @@ Download dit project als een ZIP-archief. Zie [_Cloning a repository using the c
 2. Vul beide bestanden met [veilige wachtwoorden](https://docs.microsoft.com/nl-nl/sql/relational-databases/security/password-policy?view=sql-server-ver15). ⚠️ Als het wachtwoord niet voldoet aan deze vereisten zal de RDBMS niet starten en krijg je vreemde problemen.
 3. Eindig beide bestanden met een witregel.
 
-### 3. VS Code: open een nieuw venster voor SQL Server 🛢️
+### 4. VS Code: open een nieuw venster voor SQL Server 🛢️
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
 N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met SQL Server.
 
-### 4. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️
+### 5. VS Code: open de folder `rdbms` in het venster voor SQL Server 🛢️
 
 Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
 Selecteer de map `rdbms`, dus niet een bestand erbinnen.
 
 📙 Als het goed is ziet dit nieuwe venster er oranjebruin uit.
 
-### 5. VS Code: installeer de benodigde extensies
+### 6. VS Code: installeer de benodigde extensies
 
 Op een gegeven moment krijg je mogelijk
 
@@ -91,7 +98,7 @@ Op een gegeven moment krijg je mogelijk
 
 Reageer in dat geval met _Install All_.
 
-### 6. VS Code: activeer de dev container voor SQL Server 🛢️
+### 7. VS Code: activeer de dev container voor SQL Server 🛢️
 
 Op een gegeven moment krijg je
 
@@ -117,22 +124,22 @@ De suggestie dat Docker op publieke netwerken actief zou mogen worden komt door 
 ![de vraag of je de dev container toegang wilt geven tot bestanden.](img/Docker_Desktop_-_Filesharing.png)
 Kies telkens _Share it_. Doe dit onmiddellijk, want als je te lang wacht kan het stappenplan mis gaan.
 
-### 7. VS Code: open een nieuw venster voor PHP 📦
+### 8. VS Code: open een nieuw venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
-### 8. VS Code: open de folder `webserver` in het venster voor PHP 📦
+### 9. VS Code: open de folder `webserver` in het venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
 Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
 📗 Als het goed is ziet dit nieuwe venster er groen uit.
 
-### 9. VS Code: activeer de dev container voor PHP 📦
+### 10. VS Code: activeer de dev container voor PHP 📦
 
 (Deze instructies zijn gelijk aan de vorige stap genaamd _VS Code: activeer de dev container ..._.)
 
-### 10. Browser: bezoek nu [de website](http://127.0.0.1/over)
+### 11. Browser: bezoek nu [de website](http://127.0.0.1/over)
 
 Deze pagina werkt. Sommige andere pagina's, die RDBMS gebruiken, mogelijk niet. Daarvoor moet je eerst de stappen [Hoe kan ik de database vullen?](#hoe-kan-ik-de-database-vullen) uitvoeren.
 
@@ -163,7 +170,7 @@ Getest is het herstellen van een `.bak`-bestand met een dump van de Fletnix-data
 
 #### 1. Browser: download de databasebackup (eenmalig)
 
-Download de [Fletnix-databasebackup vanaf GitHub](https://github.com/HANICA/WT_IS_Bp/releases/download/0.1.0/FLETNIX.bak.zip) naar de map [`rdbms/`](/rdbms). Pak het bestand daar uit, en stel vast dat de naam inderdaad `FLETNIX.bak` is.
+Download de [Fletnix-databasebackup vanaf GitHub](https://github.com/hanaim-webtech/webtech-is-env/releases/download/Fletnix/FLETNIX.bak.zip) naar de map [`rdbms/`](/rdbms). Pak het bestand daar uit, en stel vast dat de naam inderdaad `FLETNIX.bak` is.
 
 #### 2. Herhaal het _stappenplan voor start_
 
