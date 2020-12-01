@@ -84,7 +84,7 @@ Het kan zijn dat Windows je een dialoogvenster met een waarschuwing geeft, zodra
 Deze waarschuwing mag je negeren.
 Herstart wel je computer, zoals het dialoogvenster vraagt.
 
-![Docker Desktop - Install WSL 2 kernel update](Waarschuwing_WSL_2.png)
+![Docker Desktop - Install WSL 2 kernel update](img/Waarschuwing_WSL_2.png)
 
 *Fig. 1: Docker Desktop - Install WSL 2 kernel update.*
 
