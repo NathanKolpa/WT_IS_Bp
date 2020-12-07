@@ -6,9 +6,11 @@
 - [Stappenplan voor de start](#stappenplan-voor-de-start)
   - [0. Vereisten](#0-vereisten)
     - [Docker Desktop](#docker-desktop)
-      - [Virtualisatie (Windows)](#virtualisatie-windows)
-      - [WSL 2 (Windows)](#wsl-2-windows)
-      - [Instellen](#instellen)
+      - [Problemen oplossen onder Windows](#problemen-oplossen-onder-windows)
+        - [Te oude computer](#te-oude-computer)
+        - [WSL 2](#wsl-2)
+        - [Detailinstructies over virtualisatie](#detailinstructies-over-virtualisatie)
+      - [Hoe Docker instellen?](#hoe-docker-instellen)
   - [1. GitHub - Haal een kopie van dit project binnen](#1-github---haal-een-kopie-van-dit-project-binnen)
   - [2. VS Code - Installeer de EditorConfig](#2-vs-code---installeer-de-editorconfig)
   - [3. VS Code - Maak de secrets aan](#3-vs-code---maak-de-secrets-aan)
@@ -58,26 +60,34 @@ Dit project gaat uit van [Visual Studio (VS) Code](https://code.visualstudio.com
 
 ## Stappenplan voor de start
 
-Het is belangrijk dat je deze stappen exact in deze volgorde en volledig uitvoert om te kunnen beginnen met programmeren.
+Het is belangrijk dat je deze stappen **exact in deze volgorde en volledig** uitvoert om te kunnen beginnen met programmeren.
 
 Voor een beginner zou dit eenmalig tien minuten kunnen duren.
 Vervolgens, als je alles weg zou gooien, maar met ervaring, twee minuten.
 
 ### 0. Vereisten
 
+- Zorg gedurende dit hele proces voor een werkende, snelle en betrouwbare internetverbinding.
+Hapert je internet ergens, dan kan je soms de pech hebben dat je vreemde foutmeldingen krijgt.
 - Installeer [VS Code](https://code.visualstudio.com/).
-- Installeer Docker.
+- Installeer Docker van Docker Inc.
 Dit project is getest met de variant [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 #### Docker Desktop
 
-##### Virtualisatie (Windows)
+##### Problemen oplossen onder Windows
 
-Volg de instructies op [Virtualization](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization-must-be-enabled), alleen die onder de kopjes *‘VIRTUALIZATION MUST BE ENABLED’* en *‘WSL 2 AND WINDOWS HOME’*.
+###### Te oude computer
 
-##### WSL 2 (Windows)
+Heb je een te oude computer, dan kan je dit dialoogvenster krijgen:
 
-Het kan zijn dat Windows je een dialoogvenster met een waarschuwing geeft, zodra je Docker geïnstalleerd hebt.
+![Docker Desktop - An error occurred - Hardware assisted virtualization ….](img/Docker_An_error_occurred_Hardware_assisted_virtualization.png)
+
+*Fig. 1: Docker Desktop - An error occurred - Hardware assisted virtualization ….*
+
+###### WSL 2
+
+Je kan een dialoogvenster met een waarschuwing krijgen, zodra je Docker geïnstalleerd hebt.
 
 > Please click the link and follow the instructions to install the kernel update: …
 
@@ -86,11 +96,17 @@ Herstart wel je computer, zoals het dialoogvenster vraagt.
 
 ![Docker Desktop - Install WSL 2 kernel update](img/Waarschuwing_WSL_2.png)
 
-*Fig. 1: Docker Desktop - Install WSL 2 kernel update.*
+*Fig. 2: Docker Desktop - Install WSL 2 kernel update.*
 
-##### Instellen
+###### Detailinstructies over virtualisatie
 
-- Stel niet minder dan de standaardwaarde aan RAM-geheugen in: 2 GiB.
+Mocht je nog steeds problemen hebben tijdens of direct na de installatie van Docker Desktop, bestudeer dan de instructies van Docker Inc. onder het kopje [*Virtualization*](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization-must-be-enabled), alleen die onder de subkopjes *‘VIRTUALIZATION MUST BE ENABLED’* en *‘WSL 2 AND WINDOWS HOME’*.
+
+##### Hoe Docker instellen?
+
+Zorg onder [*Settings* - *Resources*](https://docs.docker.com/docker-for-windows/#resources) voor de volgende instellingen:
+
+- Stel niet minder in dan de standaardwaarde aan RAM-geheugen: 2 GiB.
 - Houd verder rekening met ca. 5 GiB aan benodigde opslagruimte.
 
 ### 1. GitHub - Haal een kopie van dit project binnen
@@ -137,7 +153,7 @@ Op een gegeven moment krijg je mogelijk de vraag of je de door deze workspace aa
 
 ![This workspace has extension recommendations.](img/This_workspace_has_extension_recommendations.png)
 
-*Fig. 2: This workspace has extension recommendations.*
+*Fig. 3: This workspace has extension recommendations.*
 
 Reageer in dat geval met _Install All_.
 
@@ -147,7 +163,7 @@ Op een gegeven moment krijg je de vraag of je de dev container binnen deze map w
 
 ![Folder containers a dev container configuration file.](img/Folder_contains_a_dev_configuration_file_Reopen_folder_to_develop_in_a_container.png)
 
-*Fig. 3: Folder contains a dev container configuration file.*
+*Fig. 4: Folder contains a dev container configuration file.*
 
 Reageer met _Reopen in Container_.
 
@@ -164,7 +180,7 @@ Bij de vraag of je Docker netwerkverkeer wilt toestaan,
 
 ![Windows Defender has blocked some features of this app](img/Windows_Security_Alert.png)
 
-*Fig. 4: Windows Defender has blocked some features of this app*
+*Fig. 5: Windows Defender has blocked some features of this app*
 
 kies _Allow access_.
 
@@ -176,7 +192,7 @@ Bij de vraag of je de dev container toegang wilt geven tot bestanden,
 
 ![Docker Desktop - Filesharing](img/Docker_Desktop_-_Filesharing.png)
 
-*Fig. 5: Docker Desktop - Filesharing*
+*Fig. 6: Docker Desktop - Filesharing*
 
 kies telkens _Share it_.
 Doe dit onmiddellijk, want als je te lang wacht kan het stappenplan mis gaan.
@@ -217,7 +233,7 @@ Zie: [_Opening workspace files_](https://code.visualstudio.com/docs/editor/multi
 Op een gegeven moment krijg je mogelijk de vraag of je de door deze workspace aanbevolen extensies wilt installeren.
 
 ![This workspace has extension recommendations](img/This_workspace_has_extension_recommendations.png)
-*Fig. 6: This workspace has extension recommendations.*
+*Fig. 7: This workspace has extension recommendations.*
 
 Reageer in dat geval met _Install All_.
 
@@ -247,12 +263,12 @@ Zorg ervoor dat je in het venster voor PHP bezig bent.
 Kies Menubalk > _Terminal_ > _Run Task…_.
 
 ![Menubalk > _Terminal_ > _Run Task…_.](img/Menu_Terminal_Run_Task.png)
-*Fig. 7: Menubalk > _Terminal_ > _Run Task…_.*
+*Fig. 8: Menubalk > _Terminal_ > _Run Task…_.*
 
 Kies vervolgens _Herstel de Fletnix-database_.
 
 ![Herstel de Fletnix-database](img/Herstel_Fletnix_database.png)
-*Fig. 8: _Herstel de Fletnix-database_.*
+*Fig. 9: _Herstel de Fletnix-database_.*
 
 ### Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?
 
@@ -280,7 +296,7 @@ De logboeken van SQL Server en de PHP webserver zijn in te zien via Docker. Alle
 Kies de linker zijbalk > Docker-logo > _Containers_ > rechtsklik - _View Logs_.
 
 ![Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.](img/Docker-logboeken.png)
-*Fig. 9: Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.*
+*Fig. 10: Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.*
 
 ### 🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?
 
