@@ -4,11 +4,11 @@ services:
         build: .
         environment:
             - ACCEPT_EULA=Y
-        # TODO: simplify params
+        # TODO: Vereenvoudig de parameters.
         command: |-
             php -S 0.0.0.0:80 -d open_basedir='/srv/webserver/applicatie/:/run/secrets/' -d doc_root=./public/ public/index.php
         working_dir: "/srv/webserver/applicatie"
-        # TODO: check how to restrict to localhost
+        # TODO: Beperk de socket tot de loopback network interface
         ports:
             - target: "80"
               published: "80"

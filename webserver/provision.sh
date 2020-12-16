@@ -2,49 +2,45 @@
 
 set -eux
 
+sed -i -e 's/v[[:digit:]]\..*\//edge\//g' '/etc/apk/repositories'
+printf '%s\n' 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >>/etc/apk/repositories
 apk update
-apk add --no-cache gnupg
+apk add --no-cache 'git' 'nodejs-current' 'npm'
+npm install -g 'npm'
+npm install -g 'hint' 'prettier' 'stylelint' 'stylelint-config-standard' 'stylelint-no-unsupported-browser-features'
 
-cd "${TMPDIR:-/tmp/}"
+cd -- "${TMPDIR:-/tmp/}/vendor/"
 
-# Install PHP CS Fixer
-curl -f -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.16.3/php-cs-fixer.phar -o php-cs-fixer
-chmod a+x php-cs-fixer
-mv php-cs-fixer /usr/local/bin/php-cs-fixer
-
-# Install SQL Server drivers
+mv 'php-cs-fixer.phar' '/usr/local/bin/php-cs-fixer'
+mv 'phpcbf.phar' '/usr/local/bin/phpcbf'
+mv 'phpcs.phar' '/usr/local/bin/phpcs'
+mv 'phpmd.phar' '/usr/local/bin/phpmd'
+mv 'phpstan.phar' '/usr/local/bin/phpstan'
 
 # Install SQL Server ODBC drivers and tools (required for the sqlsrv driver).
-curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.apk
-curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.apk
+yes | apk add --allow-untrusted 'msodbcsql17_17.6.1.1-1_amd64.apk'
+yes | apk add --allow-untrusted 'mssql-tools_17.6.1.1-1_amd64.apk'
 
-# Verify signature
-curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.sig
-curl -f -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.sig
-
-curl -f https://packages.microsoft.com/keys/microsoft.asc | gpg --import -
-gpg --verify msodbcsql17_17.5.2.2-1_amd64.sig msodbcsql17_17.5.2.2-1_amd64.apk
-gpg --verify mssql-tools_17.5.2.1-1_amd64.sig mssql-tools_17.5.2.1-1_amd64.apk
-
-# Install the package(s)
-yes | apk add --allow-untrusted msodbcsql17_17.5.2.2-1_amd64.apk
-yes | apk add --allow-untrusted mssql-tools_17.5.2.1-1_amd64.apk
 cd -
 
-apk add --no-cache php7 php7-dev php7-pear php7-pdo php7-openssl autoconf make g++ unixodbc-dev openjdk11-jre-headless shellcheck
+apk add --no-cache 'php7' 'php7-dev' 'php7-pear' 'php7-pecl-xdebug' 'php7-pdo' 'php7-openssl' 'autoconf' 'make' 'g++' 'unixodbc-dev' 'openjdk11-jre-headless' 'shellcheck'
 
-cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
-pecl config-set php_ini /usr/local/etc/php/php.ini
+php -i
+cp '/usr/local/etc/php/php.ini-development' '/usr/local/etc/php/php.ini'
+pecl config-set php_ini '/usr/local/etc/php/php.ini'
 
 # Procedural sqlsrv. Enable for debugging only.
-#pecl install sqlsrv
-#docker-php-ext-enable sqlsrv
+#pecl install 'sqlsrv-5.9.0beta2'
+#docker-php-ext-enable 'sqlsrv'
 
-pecl install pdo_sqlsrv
-docker-php-ext-enable pdo_sqlsrv
+cd -- "${TMPDIR:-/tmp/}"'/vendor/pdo_sqlsrv-5.9.0beta2/pdo_sqlsrv-5.9.0beta2/'
+phpize
+./configure
+make
+make install
+cd -
 
-pecl install xdebug
-docker-php-ext-enable xdebug
+docker-php-ext-enable 'pdo_sqlsrv'
 
 printf '%s\n' 'file_uploads = Off
 allow_url_fopen = Off

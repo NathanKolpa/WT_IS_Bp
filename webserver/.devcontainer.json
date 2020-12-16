@@ -1,22 +1,63 @@
 {
-    "name": "PHP",
-    "dockerComposeFile": ["docker-compose.yml"],
-    "service": "webserver",
-    "workspaceFolder": "/srv/webserver",
-    "shutdownAction": "none",
-    "extensions": [
-        "davidanson.vscode-markdownlint",
-        "ecodes.vscode-phpmd",
-        "editorconfig.editorconfig",
-        "esbenp.prettier-vscode",
-        "felixfbecker.php-debug",
-        "higoka.php-cs-fixer",
-        "bmewburn.vscode-intelephense-client",
-        "mehedidracula.php-namespace-resolver",
-        "sleistner.vscode-fileutils",
-        "sonarsource.sonarlint-vscode",
-        "timonwong.shellcheck",
-        "tyriar.sort-lines",
-        "visualstudioexptteam.vscodeintellicode"
-    ]
+  "dockerComposeFile": ["docker-compose.yml"],
+  "extensions": [
+    "GitHub.vscode-pull-request-github",
+    "bmewburn.vscode-intelephense-client",
+    "breezelin.phpstan",
+    "codezombiech.gitignore",
+    "ctf0.htmlhint",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "ecodes.vscode-phpmd",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "felixfbecker.php-debug",
+    "gruntfuggly.todo-tree",
+    "higoka.php-cs-fixer",
+    "jzmstrjp.color-the-tag-name",
+    "mehedidracula.php-namespace-resolver",
+    "ms-vsliveshare.vsliveshare",
+    "sleistner.vscode-fileutils",
+    "sonarsource.sonarlint-vscode",
+    "stylelint.vscode-stylelint",
+    "timonwong.shellcheck",
+    "tsqllint.tsqllint",
+    "tyriar.sort-lines",
+    "visualstudioexptteam.vscodeintellicode",
+    "webhint.vscode-webhint",
+    "wongjn.php-sniffer",
+    "yzhang.markdown-all-in-one"
+  ],
+  "name": "PHP",
+  "service": "webserver",
+  "settings": {
+    "[php]": {
+      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "[markdown]": {
+      "editor.quickSuggestions": true,
+      "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "css.validate": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.rulers": [120],
+    "less.validate": false,
+    "markdown.extension.tableFormatter.enabled": true,
+    "markdown.extension.toc.slugifyMode": "github",
+    "phpSniffer.standard": "phpcs.xml",
+    "phpstan.configuration": "phpstan.neon",
+    "phpstan.level": "config",
+    "scss.validate": false,
+    "sonarlint.disableTelemetry": true,
+    "sonarlint.ls.javaHome": "/usr/",
+    "stylelint.configBasedir": "/usr/lib/node_modules/",
+    "webhint.enableTelemetry": "disabled"
+  },
+  "shutdownAction": "none",
+  "workspaceFolder": "/srv/webserver"
 }

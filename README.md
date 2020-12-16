@@ -12,7 +12,7 @@
         - [Detailinstructies over virtualisatie](#detailinstructies-over-virtualisatie)
       - [Hoe Docker instellen?](#hoe-docker-instellen)
   - [1. GitHub - Haal een kopie van dit project binnen](#1-github---haal-een-kopie-van-dit-project-binnen)
-  - [2. VS Code - Installeer de EditorConfig](#2-vs-code---installeer-de-editorconfig)
+  - [2. VS Code - Installeer de EditorConfig-extensie](#2-vs-code---installeer-de-editorconfig-extensie)
   - [3. VS Code - Maak de secrets aan](#3-vs-code---maak-de-secrets-aan)
   - [4. VS Code - Open een nieuw venster voor SQL Server 🛢️](#4-vs-code---open-een-nieuw-venster-voor-sql-server-️)
   - [5. VS Code - Open de folder `rdbms` in het venster voor SQL Server 🛢️](#5-vs-code---open-de-folder-rdbms-in-het-venster-voor-sql-server-️)
@@ -114,7 +114,7 @@ Zorg onder [*Settings* - *Resources*](https://docs.docker.com/docker-for-windows
 Download dit project als een ZIP-archief.
 Zie [_Cloning a repository using the command line_](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-using-the-command-line), alleen stap 3.
 
-### 2. VS Code - Installeer de EditorConfig
+### 2. VS Code - Installeer de EditorConfig-extensie
 
 Doordat iedereen een verschillend besturingssysteem gebruikt kunnen er problemen met het opslaan van bestanden ontstaan.
 EditorConfig is een standaard die bepaalt hoe bestanden moeten worden opgeslagen.
@@ -128,8 +128,8 @@ Secrets, zoals database-wachtwoorden, worden in dit template veilig gebruikt.
 Om dat mogelijk te maken is wel een handeling van jou vereist.
 
 1. Maak in de hoofdmap van het project twee bestanden aan met VS Code:
-    - `password_rdbms_app.txt`
-    - `password_rdbms_superuser.txt`
+    - `password_rdbms_app.txt` (*wachtwoord van `applicatie`-gebruiker*)
+    - `password_rdbms_superuser.txt` (*wachtwoord van SA*)
 2. Vul beide bestanden met [veilige wachtwoorden](https://docs.microsoft.com/nl-nl/sql/relational-databases/security/password-policy?view=sql-server-ver15).
 ⚠️ Als het wachtwoord niet voldoet aan deze vereisten zal de RDBMS niet starten en krijg je vreemde problemen.
 3. Eindig beide bestanden met een witregel.
@@ -233,6 +233,7 @@ Zie: [_Opening workspace files_](https://code.visualstudio.com/docs/editor/multi
 Op een gegeven moment krijg je mogelijk de vraag of je de door deze workspace aanbevolen extensies wilt installeren.
 
 ![This workspace has extension recommendations](img/This_workspace_has_extension_recommendations.png)
+
 *Fig. 7: This workspace has extension recommendations.*
 
 Reageer in dat geval met _Install All_.
@@ -263,12 +264,10 @@ Zorg ervoor dat je in het venster voor PHP bezig bent.
 Kies Menubalk > _Terminal_ > _Run Task…_.
 
 ![Menubalk > _Terminal_ > _Run Task…_.](img/Menu_Terminal_Run_Task.png)
+
 *Fig. 8: Menubalk > _Terminal_ > _Run Task…_.*
 
 Kies vervolgens _Herstel de Fletnix-database_.
-
-![Herstel de Fletnix-database](img/Herstel_Fletnix_database.png)
-*Fig. 9: _Herstel de Fletnix-database_.*
 
 ### Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?
 
@@ -296,7 +295,8 @@ De logboeken van SQL Server en de PHP webserver zijn in te zien via Docker. Alle
 Kies de linker zijbalk > Docker-logo > _Containers_ > rechtsklik - _View Logs_.
 
 ![Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.](img/Docker-logboeken.png)
-*Fig. 10: Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.*
+
+*Fig. 9: Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.*
 
 ### 🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?
 

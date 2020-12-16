@@ -1,0 +1,16 @@
+{
+  "extends": ["development"],
+  "hints": {
+    "scoped-svg-styles": "error",
+    "manifest-is-valid": "error",
+    "compat-api/css": ["error"],
+    "compat-api/html": "error",
+    "html-checker": [
+      "error",
+      {
+        "details": true,
+        "ignore": ["Section lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all sections."]
+      }
+    ]
+  }
+}

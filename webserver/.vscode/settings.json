@@ -1,12 +1,4 @@
 {
-    "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-    },
-    // Stel de verwachte regellengte in, om discussie over leesbaarheid te voorkomen.
-    "editor.rulers": [120],
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "sonarlint.ls.javaHome": "/usr/",
     // Maak VS Code zo gebruikersvriendelijk mogelijk.
     "workbench.tree.indent": 24,
     "workbench.startupEditor": "none",
