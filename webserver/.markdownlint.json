@@ -1,1 +1,19 @@
-../.markdownlint.json
+{
+  "default": true,
+  "line_length": false,
+  "list-marker-space": false,
+  "no-duplicate-header": false,
+  "no-trailing-punctuation": false,
+  "ul-indent": false,
+  "no-inline-html": {
+    "allowed_elements": [
+      "table",
+      "caption",
+      "td",
+      "tr",
+      "th",
+      "thead",
+      "tbody"
+    ]
+  }
+}
