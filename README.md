@@ -91,8 +91,8 @@ Je kan een dialoogvenster met een waarschuwing krijgen, zodra je Docker geïnsta
 
 > Please click the link and follow the instructions to install the kernel update: …
 
-Deze waarschuwing mag je negeren.
-Herstart wel je computer, zoals het dialoogvenster vraagt.
+Installeer de kernel update zoals gevraagd.
+Herstart je computer.
 
 ![Docker Desktop - Install WSL 2 kernel update](img/Waarschuwing_WSL_2.png)
 
