@@ -2,3 +2,6 @@ parameters:
 	level: 4
 	paths:
 		- applicatie
+parameters:
+    scanDirectories:
+      - applicatie

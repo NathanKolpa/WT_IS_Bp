@@ -61,3 +61,7 @@ xdebug.remote_autostart = 1
 # Required to extend beyond localhost, because of Docker networking.
 xdebug.remote_host = "0.0.0.0"
 ' >>/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+printf '%s\n' '[PHP]
+include_path = "/srv/webapplicatie/applicatie/:applicatie/"
+' >/usr/local/etc/php/conf.d/webapplicatie.ini

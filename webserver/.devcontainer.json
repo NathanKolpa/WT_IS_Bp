@@ -2,7 +2,6 @@
   "dockerComposeFile": ["docker-compose.yml"],
   "extensions": [
     "GitHub.vscode-pull-request-github",
-    "bmewburn.vscode-intelephense-client",
     "breezelin.phpstan",
     "codezombiech.gitignore",
     "ctf0.htmlhint",
@@ -33,7 +32,7 @@
   "service": "webserver",
   "settings": {
     "[php]": {
-      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+      "editor.defaultFormatter": "wongjn.php-sniffer"
     },
     "[markdown]": {
       "editor.quickSuggestions": true,
@@ -43,12 +42,12 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "css.validate": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.rulers": [120],
     "less.validate": false,
     "markdown.extension.tableFormatter.enabled": true,
     "markdown.extension.toc.slugifyMode": "github",
+    "phpmd.command": "/usr/local/bin/phpmd",
     "phpSniffer.standard": "phpcs.xml",
     "phpstan.configuration": "phpstan.neon",
     "phpstan.level": "config",
