@@ -1,38 +1,38 @@
-version: "3.7"
+version: '3.7'
 services:
-    webserver:
-        build: .
-        environment:
-            - ACCEPT_EULA=Y
-        # TODO: Vereenvoudig de parameters.
-        command: |-
-            php -S 0.0.0.0:80 -d open_basedir='/srv/webserver/applicatie/:/run/secrets/' -d doc_root=./public/ public/index.php
-        working_dir: "/srv/webserver/applicatie"
-        # TODO: Beperk de socket tot de loopback network interface
-        ports:
-            - target: "80"
-              published: "80"
-              protocol: tcp
-              mode: bridge
-        healthcheck:
-            test: ["CMD", "curl", "-f", "http://127.0.0.1"]
-            interval: 1m30s
-            timeout: 10s
-            retries: 3
-            start_period: 40s
-        volumes:
-            - ./:/srv/webserver/:cached
-        networks:
-            - webapplicatie
-        secrets:
-            - source: password_rdbms_app
-              uid: "0"
-              gid: "0"
-              mode: "0440"
+  webserver:
+    build: .
+    environment:
+      - ACCEPT_EULA=Y
+    # Zie https://www.php.net/manual/en/features.commandline.webserver.php
+    command: |-
+      php -S 0.0.0.0:80 -c /srv/webserver/webapplicatie.ini -t public/ public/index.php
+    working_dir: '/srv/webserver/applicatie'
+    # TODO: Beperk de socket tot de loopback network interface.
+    ports:
+      - target: '80'
+        published: '80'
+        protocol: tcp
+        mode: bridge
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://127.0.0.1']
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    volumes:
+      - ./:/srv/webserver/:cached
+    networks:
+      - webapplicatie
+    secrets:
+      - source: password_rdbms_app
+        uid: '0'
+        gid: '0'
+        mode: '0440'
 secrets:
-    password_rdbms_app:
-        file: ../password_rdbms_app.txt
+  password_rdbms_app:
+    file: ../password_rdbms_app.txt
 networks:
-    webapplicatie:
-        external:
-            name: webapplicatie
+  webapplicatie:
+    external:
+      name: webapplicatie

@@ -1,6 +1,6 @@
 FROM php:7.4.13-cli-alpine3.12
 VOLUME /srv/webserver
-COPY ./provision.sh /root/
+COPY provision.sh *.ini /root/
 COPY vendor "${TMPDIR:-/tmp/}"/vendor
 RUN /root/provision.sh
 WORKDIR /srv/webserver/
