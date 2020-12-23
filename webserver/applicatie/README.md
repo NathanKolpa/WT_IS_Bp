@@ -3,10 +3,14 @@
 Standaard is de broncode als volgt gestructureerd:
 
 ```text
+.
+├── README.md
 ├── config
 │   ├── bootstrap.php
 │   └── db.php
 ├── public
+│   ├── css
+│   │   └── stylesheet.css
 │   └── index.php
 └── src
     ├── bin
@@ -19,6 +23,8 @@ Standaard is de broncode als volgt gestructureerd:
     │   └── fouten_afhandelen.php
     └── views
         ├── 404.php
+        ├── form_test_get.php
+        ├── form_test_post.php
         ├── index.php
         ├── over.php
         └── test_db.php
