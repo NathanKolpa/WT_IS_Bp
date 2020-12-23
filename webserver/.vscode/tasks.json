@@ -1,19 +1,19 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Herstel de Fletnix-database",
-            "type": "process",
-            "command": "sh",
-            "args": [
-                "-c",
-                "set +aeu; IFS= read -r -s -p 'Voer het wachtwoord voor de SA van de SQL Server RDBMS in: ' password; printf '%s' \"$password\" | php -f applicatie/src/bin/herstel_db.php"
-            ],
-            "presentation": {
-                "reveal": "always",
-                "panel": "new"
-            },
-            "problemMatcher": []
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Herstel de Fletnix-database",
+      "type": "process",
+      "command": "sh",
+      "args": [
+        "-c",
+        "set +aeu; IFS= read -r -s -p 'Voer het wachtwoord voor de SA van de SQL Server RDBMS in: ' password; printf '%s' \"$password\" | php -c /srv/webserver/webapplicatie.ini -f applicatie/src/bin/herstel_db.php"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
 }
