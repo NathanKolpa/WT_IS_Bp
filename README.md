@@ -34,6 +34,7 @@
     - [2. Herhaal het _stappenplan voor start_](#2-herhaal-het-stappenplan-voor-start)
     - [3. VS Code - Start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦](#3-vs-code---start-de-task-herstel-de-fletnix-database-in-de-dev-container-voor-php-)
   - [Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?](#kan-ik-sql-server-ook-nog-buiten-docker-om-draaien-op-de-docker-host)
+  - [Kan ik ook verbinding maken met de RDBMS vanuit Azure Data Studio of SSMS buiten Docker om?](#kan-ik-ook-verbinding-maken-met-de-rdbms-vanuit-azure-data-studio-of-ssms-buiten-docker-om)
   - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
   - [Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?](#hoe-kan-ik-dingen-uitproberen-en-uitzoeken-aan-de-database-buiten-php-om)
   - [Hoe bekijk ik de logboeken van de containers?](#hoe-bekijk-ik-de-logboeken-van-de-containers)
@@ -245,6 +246,11 @@ Zie verder [Hoe kan ik versiebeheer met Git gebruiken?](#hoe-kan-ik-versiebeheer
 ### Hoe kan ik de database vullen?
 
 Getest is het herstellen van een `.bak`-bestand met een dump van de Fletnix-database.
+Besef dat de database weer weg is als je alle Docker-containers weggooit (in ieder geval die van `rdbms`).
+Dat kan al gebeuren als je Docker Desktop upgradet of reset.
+Zorg ervoor dat al je wijzigingen/vulling van de database te herstellen is met een eigen PHP-script.
+Werk niet met het invoeren van losse SQL-statements.
+Dan is je werk niet goed reproduceerbaar!
 
 #### 1. Browser - Download de databasebackup (eenmalig)
 
@@ -275,6 +281,12 @@ Ja, maar dit kan vreemde effecten geven als je op de Docker host zelf, buiten VS
 SQL Server Management Studio probeert te verbinden met de RDBMS-container.
 Zie [`rdbms/docker-compose.yml`](rdbms/docker-compose.yml).
 Het is meestal verstandig om alle overige SQL Server instanties te stoppen tijdens je werk aan dit project.
+
+### Kan ik ook verbinding maken met de RDBMS vanuit Azure Data Studio of SSMS buiten Docker om?
+
+Ja.
+Gebruik als ‘Hostname’ `localhost,1433`.
+Kies ‘SQL login’ als authenticatiemethode.
 
 ### Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?
 
