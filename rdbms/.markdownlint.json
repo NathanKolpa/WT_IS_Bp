@@ -1,1 +1,8 @@
-../.markdownlint.json
+{
+    "default": true,
+    "line_length": false,
+    "list-marker-space": false,
+    "no-emphasis-as-heading": false,
+    "no-trailing-punctuation": false,
+    "ul-indent": false
+}
