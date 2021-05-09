@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace fletnix\views\response_404;
-
 ?>
 <!DOCTYPE html>
 <html lang="nl">

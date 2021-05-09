@@ -13,32 +13,18 @@ Standaard is de broncode als volgt gestructureerd:
 │   │   └── stylesheet.css
 │   └── index.php
 └── src
-    ├── bin
-    │   └── herstel_db.php
-    ├── data
-    │   ├── db_herstellen.php
-    │   ├── db_lezen.php
-    │   └── db_verbinden.php
     ├── utils
     │   └── fouten_afhandelen.php
     └── views
         ├── 404.php
-        ├── form_test_get.php
-        ├── form_test_post.php
-        ├── index.php
-        ├── over.php
-        └── test_db.php
+        └── index.php
 ```
 
-De bestanden onder `config/` en `src/{bin,data,utils}` hoef je niet aan te passen.
-Liever niet zelfs.
+De bestanden onder `config/` en `src/utils` kan je beter niet aanpassen.
 Die onderdelen zijn voorgegeven als startpunt/*scaffold*.
-Alleen `src/data/db_lezen.php` is daar een uitzondering op.
-Daar zit nu alleen een voorbeeldquery in.
-
 Op `public/index.php` onthaal je de bezoekers.
-In de `switch`-`case` moet je alle URLs als geval toevoegen, en bij iedere URL de juiste pagina terugsturen.
-Onder meer het geval voor de URL `/` (dus de homepage) is al uitgewerkt.
+In de `if {...} else` moet je alle geldige paden van de URL die de bezoeker gebruikt als geval toevoegen, en bij ieder pad de juiste pagina terugsturen.
+Onder meer het geval voor het pad `/` (dus de homepage) is al uitgewerkt.
 De pagina’s werk je uit onder `src/views/`.
 Onder `public/` zet je ook je vaste bestanden (ook wel _static assets_ genoemd).
 Denk daarbij aan je stylesheets, plaatjes, etc.

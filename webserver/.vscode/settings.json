@@ -1,10 +1,10 @@
 {
-    // Maak VS Code zo gebruikersvriendelijk mogelijk.
-    "workbench.tree.indent": 24,
-    "workbench.startupEditor": "none",
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#1d7621",
-        "titleBar.activeBackground": "#739b3e",
-        "titleBar.activeForeground": "#FBFAFE"
-    }
+  // Maak VS Code zo gebruikersvriendelijk mogelijk.
+  "workbench.tree.indent": 24,
+  "workbench.startupEditor": "none",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1d7621",
+    "titleBar.activeBackground": "#739b3e",
+    "titleBar.activeForeground": "#FBFAFE"
+  }
 }

@@ -6,7 +6,7 @@ services:
       - ACCEPT_EULA=Y
     # Zie https://www.php.net/manual/en/features.commandline.webserver.php
     command: |-
-      php -S 0.0.0.0:80 -c /srv/webserver/webapplicatie.ini -t public/ public/index.php
+      php -S 0.0.0.0:80 -c /srv/webserver/webapplicatie.ini -t public/ public/router.php
     working_dir: '/srv/webserver/applicatie'
     # TODO: Beperk de socket tot de loopback network interface.
     ports:

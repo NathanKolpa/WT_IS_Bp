@@ -1,11 +1,11 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Start XDebug in luistermodus",
-            "type": "php",
-            "request": "launch",
-            "port": 9000
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Start XDebug in luistermodus",
+      "type": "php",
+      "request": "launch",
+      "port": 9000
+    }
+  ]
 }

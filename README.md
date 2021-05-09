@@ -32,7 +32,7 @@
   - [Hoe kan ik de database vullen?](#hoe-kan-ik-de-database-vullen)
     - [1. Browser - Download de databasebackup (eenmalig)](#1-browser---download-de-databasebackup-eenmalig)
     - [2. Herhaal het _stappenplan voor start_](#2-herhaal-het-stappenplan-voor-start)
-    - [3. VS Code - Start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦](#3-vs-code---start-de-task-herstel-de-fletnix-database-in-de-dev-container-voor-php-)
+    - [3. VS Code - Herstel de backup met `sqlcmd` 🛢️](#3-vs-code---herstel-de-backup-met-sqlcmd-️)
   - [Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?](#kan-ik-sql-server-ook-nog-buiten-docker-om-draaien-op-de-docker-host)
   - [Kan ik ook verbinding maken met de RDBMS vanuit Azure Data Studio of SSMS buiten Docker om?](#kan-ik-ook-verbinding-maken-met-de-rdbms-vanuit-azure-data-studio-of-ssms-buiten-docker-om)
   - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
@@ -245,17 +245,19 @@ Zie verder [Hoe kan ik versiebeheer met Git gebruiken?](#hoe-kan-ik-versiebeheer
 
 ### Hoe kan ik de database vullen?
 
-Getest is het herstellen van een `.bak`-bestand met een dump van de Fletnix-database.
+Getest is het herstellen van een `.tsql`-bestand met een databackup van de Fletnix-database.
 Besef dat de database weer weg is als je alle Docker-containers weggooit (in ieder geval die van `rdbms`).
 Dat kan al gebeuren als je Docker Desktop upgradet of reset.
-Zorg ervoor dat al je wijzigingen/vulling van de database te herstellen is met een eigen PHP-script.
+Zorg ervoor dat al je wijzigingen/vulling van de database te herstellen is vanuit je eigen versie van dit backupbestand.
 Werk niet met het invoeren van losse SQL-statements.
 Dan is je werk niet goed reproduceerbaar!
 
 #### 1. Browser - Download de databasebackup (eenmalig)
 
-Download de [Fletnix-databasebackup vanaf GitHub](https://github.com/hanaim-webtech/webtech-is-env/releases/download/Fletnix/FLETNIX.bak.zip) naar de map [`rdbms/`](/rdbms).
-Pak het bestand daar uit, en stel vast dat de naam inderdaad `FLETNIX.bak` is.
+Download de [Fletnix-databasebackup vanaf GitHub](https://github.com/hanaim-webtech/webtech-is-env/releases/download/Fletnix/Fletnix.zip) naar de map [`rdbms/`](/rdbms).
+Pak het bestand daar uit, en stel vast dat de naam inderdaad `Fletnix.tsql` is.
+
+<!-- TODO: Testen. -->
 
 #### 2. Herhaal het _stappenplan voor start_
 
@@ -263,17 +265,15 @@ Sluit VS Code helemaal af, en herhaal het stappenplan.
 
 (N.B.: Alleen zodra je gevorderd bent in het omgaan met VS Code en dev containers kan je zelf een kortere weg bedenken.)
 
-#### 3. VS Code - Start de task _Herstel de Fletnix-database_ in de dev container voor PHP 📦
+#### 3. VS Code - Herstel de backup met `sqlcmd` 🛢️
 
-Zorg ervoor dat je in het venster voor PHP bezig bent.
+Zorg ervoor dat je in het venster voor RDBMS bezig bent.
 
-Kies Menubalk > _Terminal_ > _Run Task…_.
+Kies Menubalk > _Terminal_ > _New terminal_.
 
-![Menubalk > _Terminal_ > _Run Task…_.](img/Menu_Terminal_Run_Task.png)
+Gebruik `sqlcmd` om het backupbestand te herstellen.
 
-*Fig. 8: Menubalk > _Terminal_ > _Run Task…_.*
-
-Kies vervolgens _Herstel de Fletnix-database_.
+<!-- TODO: Aanvullen -->
 
 ### Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?
 

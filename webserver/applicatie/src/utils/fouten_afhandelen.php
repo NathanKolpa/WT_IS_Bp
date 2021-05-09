@@ -2,11 +2,6 @@
 
 declare(strict_types=1);
 
-namespace fletnix\utils;
-
-use ErrorException;
-use Throwable;
-
 function errorHandler(int $foutNummer, string $foutBericht, string $bestandsnaam, int $regel)
 {
   error_log("Fout #[$foutNummer] ontstaan in [$bestandsnaam] op regel [$regel]: [$foutBericht]");
@@ -34,6 +29,3 @@ function exceptionHandler(Throwable $fout)
   header('Content-type: text/plain;charset=utf-8');
   echo 'Er is helaas een fatale fout opgetreden.';
 }
-
-set_error_handler('\fletnix\utils\errorHandler');
-set_exception_handler('\fletnix\utils\exceptionHandler');

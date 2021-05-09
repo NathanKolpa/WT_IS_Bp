@@ -1,5 +1,7 @@
 {
-  "dockerComposeFile": ["docker-compose.yml"],
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
   "extensions": [
     "GitHub.vscode-pull-request-github",
     "breezelin.phpstan",
@@ -43,11 +45,14 @@
     },
     "css.validate": false,
     "editor.formatOnSave": true,
-    "editor.rulers": [120],
+    "editor.rulers": [
+      120
+    ],
     "less.validate": false,
     "markdown.extension.tableFormatter.enabled": true,
     "markdown.extension.toc.slugifyMode": "github",
     "phpmd.command": "/usr/local/bin/phpmd",
+    "phpmd.rules": "phpmd.xml",
     "phpSniffer.standard": "phpcs.xml",
     "phpstan.configuration": "phpstan.neon",
     "phpstan.level": "config",

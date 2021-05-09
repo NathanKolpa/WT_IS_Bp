@@ -1,12 +1,9 @@
 <?php
 
+// Legt niet-geheime instellingen vast voor de verbinding met de RDBMS.
+
 declare(strict_types=1);
 
-namespace fletnix\config;
-
-class Db
-{
-  public const HOST = 'rdbms';
-  public const DATABASE = 'Applicatie';
-  public const LOGIN = 'applicatie';
-}
+define('DB_HOST', 'rdbms');
+define('DB_DATABASE', 'Applicatie');
+define('DB_LOGIN', 'applicatie');
