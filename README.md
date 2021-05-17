@@ -25,14 +25,11 @@
   - [9. VS Code - Open de folder `webserver` in het venster voor PHP 📦](#9-vs-code---open-de-folder-webserver-in-het-venster-voor-php-)
   - [10. VS Code - Activeer de dev container voor PHP 📦](#10-vs-code---activeer-de-dev-container-voor-php-)
   - [11. Browser - Bezoek de website](#11-browser---bezoek-de-website)
+  - [12. VS Code - Herstel de databasebackup met `sqlcmd` 🛢️](#12-vs-code---herstel-de-databasebackup-met-sqlcmd-️)
 - [🧑‍🏫 Stappenplan voor doorontwikkeling](#-stappenplan-voor-doorontwikkeling)
   - [1. VS Code - Open de workspace in een nieuw venster](#1-vs-code---open-de-workspace-in-een-nieuw-venster)
   - [2. VS Code - Installeer de benodigde extensies](#2-vs-code---installeer-de-benodigde-extensies)
 - [Vraag en antwoord](#vraag-en-antwoord)
-  - [Hoe kan ik de database vullen?](#hoe-kan-ik-de-database-vullen)
-    - [1. Browser - Download de databasebackup (eenmalig)](#1-browser---download-de-databasebackup-eenmalig)
-    - [2. Herhaal het _stappenplan voor start_](#2-herhaal-het-stappenplan-voor-start)
-    - [3. VS Code - Herstel de backup met `sqlcmd` 🛢️](#3-vs-code---herstel-de-backup-met-sqlcmd-️)
   - [Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?](#kan-ik-sql-server-ook-nog-buiten-docker-om-draaien-op-de-docker-host)
   - [Kan ik ook verbinding maken met de RDBMS vanuit Azure Data Studio of SSMS buiten Docker om?](#kan-ik-ook-verbinding-maken-met-de-rdbms-vanuit-azure-data-studio-of-ssms-buiten-docker-om)
   - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
@@ -215,9 +212,26 @@ Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
 ### 11. Browser - Bezoek [de website](http://127.0.0.1/)
 
-Deze pagina werkt.
-Sommige andere pagina's, die RDBMS gebruiken, mogelijk niet.
-Daarvoor moet je eerst de stappen [Hoe kan ik de database vullen?](#hoe-kan-ik-de-database-vullen) uitvoeren.
+Deze pagina werkt en toont tijdelijke ontwikkelinformatie van PHP.
+
+### 12. VS Code - Herstel de databasebackup met `sqlcmd` 🛢️
+
+Zorg ervoor dat je in het venster voor RDBMS bezig bent.
+
+⚠️ Getest is het herstellen van een [`.sql`-bestand met een basis-databasebackup van de Fletnix-database](rdbms/database/Fletnix_basis.sql).
+Besef dat de database weer weg is als je alle Docker-containers weggooit (in ieder geval die van `rdbms`).
+Dat kan al gebeuren als je Docker Desktop upgradet of reset.
+Zorg ervoor dat al je wijzigingen/vulling van de database te herstellen is vanuit je eigen versie van dit backupbestand.
+Werk niet met het invoeren van losse SQL-statements.
+Dan is je werk niet goed reproduceerbaar!
+
+Kies Menubalk > _Terminal_ > _New terminal_.
+
+Gebruik `sqlcmd` om het backupbestand te herstellen:
+
+```sh
+/opt/mssql-tools/bin/sqlcmd -S 'rdbms' -U 'SA' -x -i '/srv/rdbms/database/Fletnix_basis.sql' </run/secrets/password_rdbms_superuser
+```
 
 ## 🧑‍🏫 Stappenplan voor doorontwikkeling
 
@@ -242,38 +256,6 @@ Reageer in dat geval met _Install All_.
 Zie verder [Hoe kan ik versiebeheer met Git gebruiken?](#hoe-kan-ik-versiebeheer-met-git-gebruiken).
 
 ## Vraag en antwoord
-
-### Hoe kan ik de database vullen?
-
-Getest is het herstellen van een `.tsql`-bestand met een databackup van de Fletnix-database.
-Besef dat de database weer weg is als je alle Docker-containers weggooit (in ieder geval die van `rdbms`).
-Dat kan al gebeuren als je Docker Desktop upgradet of reset.
-Zorg ervoor dat al je wijzigingen/vulling van de database te herstellen is vanuit je eigen versie van dit backupbestand.
-Werk niet met het invoeren van losse SQL-statements.
-Dan is je werk niet goed reproduceerbaar!
-
-#### 1. Browser - Download de databasebackup (eenmalig)
-
-Download de [Fletnix-databasebackup vanaf GitHub](https://github.com/hanaim-webtech/webtech-is-env/releases/download/Fletnix/Fletnix.zip) naar de map [`rdbms/`](/rdbms).
-Pak het bestand daar uit, en stel vast dat de naam inderdaad `Fletnix.tsql` is.
-
-<!-- TODO: Testen. -->
-
-#### 2. Herhaal het _stappenplan voor start_
-
-Sluit VS Code helemaal af, en herhaal het stappenplan.
-
-(N.B.: Alleen zodra je gevorderd bent in het omgaan met VS Code en dev containers kan je zelf een kortere weg bedenken.)
-
-#### 3. VS Code - Herstel de backup met `sqlcmd` 🛢️
-
-Zorg ervoor dat je in het venster voor RDBMS bezig bent.
-
-Kies Menubalk > _Terminal_ > _New terminal_.
-
-Gebruik `sqlcmd` om het backupbestand te herstellen.
-
-<!-- TODO: Aanvullen -->
 
 ### Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?
 
