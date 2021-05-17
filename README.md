@@ -213,7 +213,7 @@ Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
 (Deze instructies zijn gelijk aan de vorige stap genaamd _VS Code: activeer de dev container ..._.)
 
-### 11. Browser - Bezoek [de website](http://127.0.0.1/over)
+### 11. Browser - Bezoek [de website](http://127.0.0.1/)
 
 Deze pagina werkt.
 Sommige andere pagina's, die RDBMS gebruiken, mogelijk niet.
