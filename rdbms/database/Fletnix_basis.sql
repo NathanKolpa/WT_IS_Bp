@@ -1,11 +1,16 @@
--- SCHEMA and Data for Movies database.
-
+-- Schema and data for Movies database.
 use master;
 DROP DATABASE IF EXISTS Movies;
 CREATE DATABASE Movies;
-
-USE Movies;
-
+GO
+USE Movies
+GO
+CREATE LOGIN applicatie WITH PASSWORD = 'Wacht_w00rddd';
+CREATE USER applicatie;
+ALTER ROLE db_datareader ADD MEMBER applicatie;
+ALTER ROLE db_datawriter ADD MEMBER applicatie;
+ALTER DATABASE [Movies] SET MULTI_USER;
+GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -24,7 +29,7 @@ CREATE TABLE Movie (
 	URL varchar(255) NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE Movie ADD  CONSTRAINT PK_Movie_1 PRIMARY KEY CLUSTERED 
+ALTER TABLE Movie ADD  CONSTRAINT PK_Movie_1 PRIMARY KEY CLUSTERED
 (
 	movie_id ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -48,7 +53,7 @@ CREATE TABLE Person(
 	gender char(1) NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE Person ADD  CONSTRAINT PK_Person PRIMARY KEY CLUSTERED 
+ALTER TABLE Person ADD  CONSTRAINT PK_Person PRIMARY KEY CLUSTERED
 (
 	person_id ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -65,7 +70,7 @@ CREATE TABLE Genre(
 GO
 SET ANSI_PADDING ON
 GO
-ALTER TABLE dbo.Genre ADD  CONSTRAINT PK_Genre PRIMARY KEY CLUSTERED 
+ALTER TABLE dbo.Genre ADD  CONSTRAINT PK_Genre PRIMARY KEY CLUSTERED
 (
 	genre_name ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -85,7 +90,7 @@ CREATE TABLE Movie_Genre(
 GO
 SET ANSI_PADDING ON
 GO
-ALTER TABLE Movie_Genre ADD  CONSTRAINT PK_Movie_Genre PRIMARY KEY CLUSTERED 
+ALTER TABLE Movie_Genre ADD  CONSTRAINT PK_Movie_Genre PRIMARY KEY CLUSTERED
 (
 	movie_id ASC,
 	genre_name ASC
@@ -118,7 +123,7 @@ CREATE TABLE Movie_Director(
 	person_id int NOT NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE Movie_Director ADD  CONSTRAINT PK_Movie_Directors PRIMARY KEY CLUSTERED 
+ALTER TABLE Movie_Director ADD  CONSTRAINT PK_Movie_Directors PRIMARY KEY CLUSTERED
 (
 	movie_id ASC,
 	person_id ASC
@@ -153,7 +158,7 @@ CREATE TABLE Movie_Cast(
 GO
 SET ANSI_PADDING ON
 GO
-ALTER TABLE Movie_Cast ADD  CONSTRAINT PK_Movie_Cast PRIMARY KEY CLUSTERED 
+ALTER TABLE Movie_Cast ADD  CONSTRAINT PK_Movie_Cast PRIMARY KEY CLUSTERED
 (
 	movie_id ASC,
 	person_id ASC,
@@ -7850,7 +7855,7 @@ select 824120,'Mirza','Diya','F' UNION ALL
 select 824546,'Mitevska','Labina','F' UNION ALL
 select 824686,'Mixon','Katie','F' UNION ALL
 select 825752,'Momoi','Kaori','F' UNION ALL
-select 825803,'Monaghan','Michelle','F'; 
+select 825803,'Monaghan','Michelle','F';
 GO
 insert [Person] ([person_id],[lastname],[firstname],[gender])
 select 825814,'Monahan','Sarah','F' UNION ALL
@@ -14516,7 +14521,7 @@ select 177128,756992,'(Unknown)' UNION ALL
 select 177128,939541,'(Unknown)' UNION ALL
 select 177128,939559,'(Unknown)' UNION ALL
 select 177328,135256,'[Jimmy]' UNION ALL
-select 177328,144493,'[Carl Denham]'; 
+select 177328,144493,'[Carl Denham]';
 GO
 insert [Movie_Cast] ([movie_id],[person_id],[role])
 select 177328,158656,'[Jack Driscoll]' UNION ALL
