@@ -11,7 +11,7 @@ Standaard is de broncode als volgt gestructureerd:
 ├── public
 │   ├── css
 │   │   └── stylesheet.css
-│   └── index.php
+│   └── router.php
 └── src
     ├── utils
     │   └── fouten_afhandelen.php
@@ -22,7 +22,7 @@ Standaard is de broncode als volgt gestructureerd:
 
 De bestanden onder `config/` en `src/utils` kan je beter niet aanpassen.
 Die onderdelen zijn voorgegeven als startpunt/*scaffold*.
-Op `public/index.php` onthaal je de bezoekers.
+Op `public/router.php` onthaal je de bezoekers.
 In de `if {...} else` moet je alle geldige paden van de URL die de bezoeker gebruikt als geval toevoegen, en bij ieder pad de juiste pagina terugsturen.
 Onder meer het geval voor het pad `/` (dus de homepage) is al uitgewerkt.
 De pagina’s werk je uit onder `src/views/`.
