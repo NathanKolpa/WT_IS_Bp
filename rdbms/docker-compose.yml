@@ -26,13 +26,13 @@ services:
               volume:
                   nocopy: true
         secrets:
-            - source: password_rdbms_superuser
+            - source: password_rdbms_admin
               uid: "0"
               gid: "0"
               mode: "0440"
 secrets:
-    password_rdbms_superuser:
-        file: ../password_rdbms_superuser.txt
+    password_rdbms_admin:
+        file: ../password_rdbms_admin.txt
 volumes:
     home_mssql:
 networks:

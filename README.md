@@ -12,24 +12,24 @@
         - [Detailinstructies over virtualisatie](#detailinstructies-over-virtualisatie)
       - [Hoe Docker instellen?](#hoe-docker-instellen)
   - [1. GitHub - Haal een kopie van dit project binnen](#1-github---haal-een-kopie-van-dit-project-binnen)
-  - [2. VS Code - Installeer de EditorConfig-extensie](#2-vs-code---installeer-de-editorconfig-extensie)
-  - [3. VS Code - Maak de secrets aan](#3-vs-code---maak-de-secrets-aan)
-  - [4. VS Code - Open een nieuw venster voor SQL Server 🛢️](#4-vs-code---open-een-nieuw-venster-voor-sql-server-️)
-  - [5. VS Code - Open de folder `rdbms` in het venster voor SQL Server 🛢️](#5-vs-code---open-de-folder-rdbms-in-het-venster-voor-sql-server-️)
-  - [6. VS Code - Installeer de benodigde extensies](#6-vs-code---installeer-de-benodigde-extensies)
-  - [7. VS Code - Activeer de dev container voor SQL Server 🛢️](#7-vs-code---activeer-de-dev-container-voor-sql-server-️)
+  - [2. VS Code - Open een nieuw venster voor SQL Server 🛢️](#2-vs-code---open-een-nieuw-venster-voor-sql-server-️)
+  - [3. VS Code - Open de folder `rdbms` in het venster voor SQL Server 🛢️](#3-vs-code---open-de-folder-rdbms-in-het-venster-voor-sql-server-️)
+  - [4. VS Code - Installeer de benodigde extensies](#4-vs-code---installeer-de-benodigde-extensies)
+  - [5. VS Code - Activeer de dev container voor SQL Server 🛢️](#5-vs-code---activeer-de-dev-container-voor-sql-server-️)
     - [Bijzonderheden bij Windows](#bijzonderheden-bij-windows)
       - [Sta Docker netwerkverkeer toe (Windows Firewall)](#sta-docker-netwerkverkeer-toe-windows-firewall)
       - [Geef de dev container toegang tot bestanden (Docker Desktop)](#geef-de-dev-container-toegang-tot-bestanden-docker-desktop)
-  - [8. VS Code - Open een nieuw venster voor PHP 📦](#8-vs-code---open-een-nieuw-venster-voor-php-)
-  - [9. VS Code - Open de folder `webserver` in het venster voor PHP 📦](#9-vs-code---open-de-folder-webserver-in-het-venster-voor-php-)
-  - [10. VS Code - Activeer de dev container voor PHP 📦](#10-vs-code---activeer-de-dev-container-voor-php-)
-  - [11. Browser - Bezoek de website](#11-browser---bezoek-de-website)
-  - [12. VS Code - Herstel de databasebackup met `sqlcmd` 🛢️](#12-vs-code---herstel-de-databasebackup-met-sqlcmd-️)
+  - [6. VS Code - Open een nieuw venster voor PHP 📦](#6-vs-code---open-een-nieuw-venster-voor-php-)
+  - [7. VS Code - Open de folder `webserver` in het venster voor PHP 📦](#7-vs-code---open-de-folder-webserver-in-het-venster-voor-php-)
+  - [8. VS Code - Activeer de dev container voor PHP 📦](#8-vs-code---activeer-de-dev-container-voor-php-)
+  - [9. Browser - Bezoek de website](#9-browser---bezoek-de-website)
+  - [10. VS Code - Herstel de databasebackup met `sqlcmd` 🛢️](#10-vs-code---herstel-de-databasebackup-met-sqlcmd-️)
 - [🧑‍🏫 Stappenplan voor doorontwikkeling](#-stappenplan-voor-doorontwikkeling)
   - [1. VS Code - Open de workspace in een nieuw venster](#1-vs-code---open-de-workspace-in-een-nieuw-venster)
   - [2. VS Code - Installeer de benodigde extensies](#2-vs-code---installeer-de-benodigde-extensies)
 - [Vraag en antwoord](#vraag-en-antwoord)
+  - [Hoe gaat deze template om met wachtwoorden/secrets?](#hoe-gaat-deze-template-om-met-wachtwoordensecrets)
+    - [VS Code - Installeer de EditorConfig-extensie](#vs-code---installeer-de-editorconfig-extensie)
   - [Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?](#kan-ik-sql-server-ook-nog-buiten-docker-om-draaien-op-de-docker-host)
   - [Kan ik ook verbinding maken met de RDBMS vanuit Azure Data Studio of SSMS buiten Docker om?](#kan-ik-ook-verbinding-maken-met-de-rdbms-vanuit-azure-data-studio-of-ssms-buiten-docker-om)
   - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
@@ -112,40 +112,20 @@ Zorg onder [*Settings* - *Resources*](https://docs.docker.com/docker-for-windows
 Download dit project als een ZIP-archief.
 Zie [_Cloning a repository using the command line_](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-using-the-command-line), alleen stap 3.
 
-### 2. VS Code - Installeer de EditorConfig-extensie
-
-Doordat iedereen een verschillend besturingssysteem gebruikt kunnen er problemen met het opslaan van bestanden ontstaan.
-EditorConfig is een standaard die bepaalt hoe bestanden moeten worden opgeslagen.
-
-Installeer de [EditorConfig-extensie](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) in VS Code.
-Klik daarvoor op de groene knop ‘Install’ bovenaan de webpagina.
-
-### 3. VS Code - Maak de secrets aan
-
-Secrets, zoals database-wachtwoorden, worden in dit template veilig gebruikt.
-Om dat mogelijk te maken is wel een handeling van jou vereist.
-
-1. Maak in de hoofdmap van het project twee bestanden aan met VS Code:
-    - `password_rdbms_app.txt` (*wachtwoord van `applicatie`-gebruiker*)
-    - `password_rdbms_superuser.txt` (*wachtwoord van SA*)
-2. Vul beide bestanden met [veilige wachtwoorden](https://docs.microsoft.com/nl-nl/sql/relational-databases/security/password-policy?view=sql-server-ver15).
-⚠️ Als het wachtwoord niet voldoet aan deze vereisten zal de RDBMS niet starten en krijg je vreemde problemen.
-3. Eindig beide bestanden met een witregel.
-
-### 4. VS Code - Open een nieuw venster voor SQL Server 🛢️
+### 2. VS Code - Open een nieuw venster voor SQL Server 🛢️
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
 N.B.: Dit venster is en blijft specifiek om te ontwikkelen aan of te werken met SQL Server.
 
-### 5. VS Code - Open de folder `rdbms` in het venster voor SQL Server 🛢️
+### 3. VS Code - Open de folder `rdbms` in het venster voor SQL Server 🛢️
 
 Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
 Selecteer de map `rdbms`, dus niet een bestand erbinnen.
 
 📙 Als het goed is ziet dit nieuwe venster er oranjebruin uit.
 
-### 6. VS Code - Installeer de benodigde extensies
+### 4. VS Code - Installeer de benodigde extensies
 
 Op een gegeven moment krijg je mogelijk de vraag of je de door deze workspace aanbevolen extensies wilt installeren.
 
@@ -155,7 +135,7 @@ Op een gegeven moment krijg je mogelijk de vraag of je de door deze workspace aa
 
 Reageer in dat geval met _Install All_.
 
-### 7. VS Code - Activeer de dev container voor SQL Server 🛢️
+### 5. VS Code - Activeer de dev container voor SQL Server 🛢️
 
 Op een gegeven moment krijg je de vraag of je de dev container binnen deze map wilt activeren.
 
@@ -195,26 +175,26 @@ Bij de vraag of je de dev container toegang wilt geven tot bestanden,
 kies telkens _Share it_.
 Doe dit onmiddellijk, want als je te lang wacht kan het stappenplan mis gaan.
 
-### 8. VS Code - Open een nieuw venster voor PHP 📦
+### 6. VS Code - Open een nieuw venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _New Window_.
 
-### 9. VS Code - Open de folder `webserver` in het venster voor PHP 📦
+### 7. VS Code - Open de folder `webserver` in het venster voor PHP 📦
 
 Via de menubalk bovenaan: _File_ > _Open..._ (macOS) of _Open Folder_ (Windows).
 Selecteer de map `webserver`, dus niet een bestand erbinnen.
 
 📗 Als het goed is ziet dit nieuwe venster er groen uit.
 
-### 10. VS Code - Activeer de dev container voor PHP 📦
+### 8. VS Code - Activeer de dev container voor PHP 📦
 
 (Deze instructies zijn gelijk aan de vorige stap genaamd _VS Code: activeer de dev container ..._.)
 
-### 11. Browser - Bezoek [de website](http://127.0.0.1/)
+### 9. Browser - Bezoek [de website](http://127.0.0.1/)
 
 Deze pagina werkt en toont tijdelijke ontwikkelinformatie van PHP.
 
-### 12. VS Code - Herstel de databasebackup met `sqlcmd` 🛢️
+### 10. VS Code - Herstel de databasebackup met `sqlcmd` 🛢️
 
 Zorg ervoor dat je in het venster voor RDBMS bezig bent.
 
@@ -230,7 +210,7 @@ Kies Menubalk > _Terminal_ > _New terminal_.
 Gebruik `sqlcmd` om het backupbestand te herstellen:
 
 ```sh
-/opt/mssql-tools/bin/sqlcmd -S 'rdbms' -U 'SA' -x -i '/srv/rdbms/database/Fletnix_basis.sql' </run/secrets/password_rdbms_superuser
+/opt/mssql-tools/bin/sqlcmd -S 'rdbms' -U 'SA' -x -i '/srv/rdbms/database/Fletnix_basis.sql' </run/secrets/password_rdbms_admin
 ```
 
 ## 🧑‍🏫 Stappenplan voor doorontwikkeling
@@ -256,6 +236,28 @@ Reageer in dat geval met _Install All_.
 Zie verder [Hoe kan ik versiebeheer met Git gebruiken?](#hoe-kan-ik-versiebeheer-met-git-gebruiken).
 
 ## Vraag en antwoord
+
+### Hoe gaat deze template om met wachtwoorden/secrets?
+
+Secrets, zoals database-wachtwoorden, worden in dit template veilig gebruikt.
+Om dat mogelijk te maken is wel een handeling van jou vereist.
+
+1. Wijzig in de hoofdmap van het project twee bestanden met VS Code:
+    - `password_rdbms_app.txt` (*wachtwoord de `applicatie`-gebruiker* (`DB_LOGIN`), de database van je webapp)
+    - `password_rdbms_admin.txt` (*wachtwoord van [`SA`, de beheerder van SQL Server](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode?view=sql-server-ver15)*)
+2. Vul beide bestanden met [veilige wachtwoorden](https://docs.microsoft.com/nl-nl/sql/relational-databases/security/password-policy?view=sql-server-ver15).
+⚠️ Als het wachtwoord niet voldoet aan deze vereisten zal de RDBMS niet starten en krijg je vreemde problemen.
+3. Eindig beide bestanden met een witregel en sla het bestand op met ASCII-tekstcodering en Linux-regeleindes.
+Dit gebeurt automatisch goed als je de EditorConfig-extensie instelt binnen VS Code, en vervolgens VS Code gebruikt om de bestanden op te slaan in plaats van bijvoorbeeld Windows Notepad.
+Zie hiervoor de volgende paragraaf.
+
+#### VS Code - Installeer de EditorConfig-extensie
+
+Doordat iedereen een verschillend besturingssysteem gebruikt kunnen er problemen met het opslaan van bestanden ontstaan.
+EditorConfig is een standaard die bepaalt hoe bestanden moeten worden opgeslagen.
+
+Installeer de [EditorConfig-extensie](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) in VS Code.
+Klik daarvoor op de groene knop ‘Install’ bovenaan de webpagina.
 
 ### Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?
 

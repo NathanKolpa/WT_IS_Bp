@@ -25,7 +25,7 @@ jobs:
             - name: Test rdbms-container
               working-directory: ${{ github.workspace }}/rdbms
               run: |
-                  printf '%s\n' 'testpassword!Hallo-1244!' > ../password_rdbms_superuser.txt
+                  printf '%s\n' 'testpassword!Hallo-1244!' > ../password_rdbms_admin.txt
                   timeout --preserve-status 2m docker-compose up --abort-on-container-exit
     test_webserver_container:
         runs-on: ubuntu-18.04
