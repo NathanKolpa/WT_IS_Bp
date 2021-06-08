@@ -16,6 +16,7 @@
   - [3. VS Code - Open de folder `rdbms` in het venster voor SQL Server 🛢️](#3-vs-code---open-de-folder-rdbms-in-het-venster-voor-sql-server-️)
   - [4. VS Code - Installeer de benodigde extensies](#4-vs-code---installeer-de-benodigde-extensies)
   - [5. VS Code - Activeer de dev container voor SQL Server 🛢️](#5-vs-code---activeer-de-dev-container-voor-sql-server-️)
+    - [Alternatief](#alternatief)
     - [Bijzonderheden bij Windows](#bijzonderheden-bij-windows)
       - [Sta Docker netwerkverkeer toe (Windows Firewall)](#sta-docker-netwerkverkeer-toe-windows-firewall)
       - [Geef de dev container toegang tot bestanden (Docker Desktop)](#geef-de-dev-container-toegang-tot-bestanden-docker-desktop)
@@ -159,6 +160,13 @@ Reageer met _Reopen in Container_.
 
 Wacht rustig af tot VS Code in de blauwe balk onderaan geen activiteit meer vertoont.
 Dit kan de eerste keer tot ca. vijf minuten duren, afhankelijk van hoe snel je internetverbinding en computer is.
+
+#### Alternatief
+
+Je kan een dev container ook altijd zelf opstarten of opnieuw aanmaken via het menu in de linkeronderhoek van ieder VS Code-venster waarin een dev container te vinden is.
+
+![Linkeronderhoek VS Code-venster: bediening dev container](img/Linkeronderhoek_VS_Code__Remote_Host-menu.png)
+*Fig. 4b: Linkeronderhoek VS Code-venster: bediening dev container.*
 
 #### Bijzonderheden bij Windows
 
