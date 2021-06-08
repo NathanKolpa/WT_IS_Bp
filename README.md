@@ -88,7 +88,12 @@ Heb je een te oude computer, dan kan je dit dialoogvenster krijgen:
 
 ###### WSL 2
 
-Je kan een dialoogvenster met een waarschuwing krijgen, zodra je Docker geïnstalleerd hebt.
+Zodra je Docker geïnstalleerd hebt kan je nog enkele waarschuwingen krijgen over WSL 2 ([*Windows Subsystem for Linux 2*](https://docs.microsoft.com/en-us/windows/wsl/about)).
+WSL 2 is een extra onderdeel voor Windows waarmee Docker, Linux en andere technologieën efficiënt kunnen werken binnen Windows.
+
+Als je een bericht krijgt dat WSL 2 niet geïnstalleerd is, volg dan de instructies op om WSL 2 wèl te installeren.
+
+Daarna kan je onder andere nog de volgende melding krijgen:
 
 > Please click the link and follow the instructions to install the kernel update: …
 
