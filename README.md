@@ -115,6 +115,10 @@ Zorg onder [*Settings* - *Resources*](https://docs.docker.com/docker-for-windows
 - Stel niet minder in dan de standaardwaarde aan RAM-geheugen: 2 GiB.
 - Houd verder rekening met ca. 5 GiB aan benodigde opslagruimte.
 
+Als je dit niet kan instellen, gebruik je de WSL 2 backend.
+Die regelt het geheugengebruik en de opslagruimte zelf.
+Met WSL 2 hoeft Windows niet vooraf apart geheugen- en opslagruimte te reserveren voor Docker containers, dus WSL 2 werkt efficiënter.
+
 ### 1. GitHub - Haal een kopie van dit project binnen
 
 Download dit project als een ZIP-archief.
