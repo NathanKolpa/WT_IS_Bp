@@ -68,8 +68,11 @@ Vervolgens, als je alles weg zou gooien, maar met ervaring, twee minuten.
 - Zorg gedurende dit hele proces voor een werkende, snelle en betrouwbare internetverbinding.
 Hapert je internet ergens, dan kan je soms de pech hebben dat je vreemde foutmeldingen krijgt.
 - Installeer [VS Code](https://code.visualstudio.com/).
-- Installeer Docker van Docker Inc.
+- [Installeer Docker](https://docs.docker.com/docker-for-windows/install/) van Docker Inc.
 Dit project is getest met de variant [Docker Desktop](https://www.docker.com/products/docker-desktop).
+- Als je Windows 10 Home gebruikt, dan kan Docker vragen om de Pro-editie te installeren, afhankelijk van hoe Docker ingesteld staat (namelijk voor de ‘Hyper-V backend’).
+Als student mag je Windows 10 Home [**gratis** upgraden naar Windows 10 Pro Education](https://www.surfspot.nl/microsoft-windows-10-education-studenten.html).
+[Pro ondersteunt allerlei bedrijfsmatige en technische functies](https://www.microsoft.com/en-us/windows/compare-windows-10-home-vs-pro) die ook handig kunnen zijn bij volgende courses.
 
 #### Docker Desktop
 
