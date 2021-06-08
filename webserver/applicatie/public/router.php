@@ -26,7 +26,7 @@ if ($urlPad === '' || $urlPad === '/') {
   Als het pad eindigt met `.css` of één van de andere door `|` gescheiden bestandsnaamextensies,
   is een geldig bestandstype opgevraagd.
   */
-      '/\.(?:css|png|jpg|jpeg|svg|woff|woff2|ttf|otf|html)$/',
+      '/\.(?:css|png|jpg|jpeg|svg|woff|woff2|ttf|otf|html|mp4|webm|ogm|ogv|ogg|mp3)$/',
       $urlPad
   );
   if ($isBestand) {
