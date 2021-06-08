@@ -233,6 +233,9 @@ Gebruik `sqlcmd` om het backupbestand te herstellen:
 /opt/mssql-tools/bin/sqlcmd -S 'rdbms' -U 'SA' -x -i '/srv/rdbms/database/Fletnix_basis.sql' </run/secrets/password_rdbms_admin
 ```
 
+Als alles goed is gegaan, zie je alleen output in de vorm van ‘x rows affected.’.
+Dit geeft aan dat er nieuwe rijen aan tabellen zijn toegevoegd.
+
 ## 🧑‍🏫 Stappenplan voor doorontwikkeling
 
 Volg eerst het [stappenplan voor de start](#stappenplan-voor-de-start).
