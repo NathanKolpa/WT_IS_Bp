@@ -1,9 +1,9 @@
-# Broncode van Fletnix
+# Fletnix
 
-Standaard is de broncode als volgt gestructureerd:
+Standaard is de broncode onder [`applicatie/`](applicatie/) als volgt gestructureerd:
 
 ```text
-.
+applicatie
 ├── README.md
 ├── config
 │   ├── bootstrap.php
