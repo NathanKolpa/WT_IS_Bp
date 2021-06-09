@@ -4,7 +4,6 @@ Standaard is de broncode onder [`applicatie/`](applicatie/) als volgt gestructur
 
 ```text
 applicatie
-├── README.md
 ├── config
 │   ├── bootstrap.php
 │   └── db.php
