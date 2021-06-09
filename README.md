@@ -53,6 +53,14 @@ Als je zelf toch GitHub gebruikt moet je zeker weten dat je uitwerking helemaal 
 Dit is een template voor de uitwerking van het beroepsproduct, een website gebaseerd op PHP en SQL Server.
 Dit project gaat uit van [Visual Studio (VS) Code](https://code.visualstudio.com/docs/getstarted/userinterface).
 
+Dit project bestaat verder uit twee onderdelen:
+
+- De [webserver](webserver/).
+- Het [RDBMS, oftewel de databaseserver](rdbms/).
+
+Wil je meer weten over deze specifieke onderdelen, zie dan de map van dat onderdeel.
+Zo staat er uitleg bij de webserver over het startpunt dat daar geboden wordt voor je webapplicatie.
+
 ### Legenda
 
 🧑‍🏫: alleen voor gevorderden.
