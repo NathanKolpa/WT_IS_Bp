@@ -317,7 +317,9 @@ Ook kan je [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-u
 
 ### Hoe bekijk ik de logboeken van de containers?
 
-De logboeken van SQL Server en de PHP webserver zijn in te zien via Docker. Alleen het workspace-venster is daarvoor op dit moment speciaal uitgerust.
+Meer informatie over onder andere foutmeldingen van PHP wordt alleen in de logboeken vermeld.
+De logboeken van SQL Server en de PHP webserver zijn in te zien via Docker.
+Alleen het workspace-venster is daarvoor op dit moment speciaal uitgerust.
 
 Kies de linker zijbalk > Docker-logo > _Containers_ > rechtsklik - _View Logs_.
 
