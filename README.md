@@ -32,7 +32,7 @@
   - [Hoe gaat deze template om met wachtwoorden/secrets?](#hoe-gaat-deze-template-om-met-wachtwoordensecrets)
     - [VS Code - Installeer de EditorConfig-extensie](#vs-code---installeer-de-editorconfig-extensie)
   - [Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?](#kan-ik-sql-server-ook-nog-buiten-docker-om-draaien-op-de-docker-host)
-  - [Kan ik ook verbinding maken met de RDBMS vanuit Azure Data Studio of SSMS buiten Docker om?](#kan-ik-ook-verbinding-maken-met-de-rdbms-vanuit-azure-data-studio-of-ssms-buiten-docker-om)
+  - [Kan ik ook verbinding maken met de RDBMS vanuit VS Code, Azure Data Studio of SSMS?](#kan-ik-ook-verbinding-maken-met-de-rdbms-vanuit-vs-code-azure-data-studio-of-ssms)
   - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
   - [Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?](#hoe-kan-ik-dingen-uitproberen-en-uitzoeken-aan-de-database-buiten-php-om)
   - [Hoe bekijk ik de logboeken van de containers?](#hoe-bekijk-ik-de-logboeken-van-de-containers)
@@ -297,11 +297,17 @@ SQL Server Management Studio probeert te verbinden met de RDBMS-container.
 Zie [`rdbms/docker-compose.yml`](rdbms/docker-compose.yml).
 Het is meestal verstandig om alle overige SQL Server instanties te stoppen tijdens je werk aan dit project.
 
-### Kan ik ook verbinding maken met de RDBMS vanuit Azure Data Studio of SSMS buiten Docker om?
+### Kan ik ook verbinding maken met de RDBMS vanuit VS Code, Azure Data Studio of SSMS?
 
 Ja.
 Gebruik als ‘Hostname’ `localhost,1433`.
 Kies ‘SQL login’ als authenticatiemethode.
+
+In VS Code (in het RDBMS-venster) zit al een extensie waarmee je de database kan verkennen.
+
+![SQL Server-extensie](img/SQL_Server_extensie.png)
+
+*Fig. 8: De SQL Server-extensie in VS Code.*
 
 ### Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?
 
