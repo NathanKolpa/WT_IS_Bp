@@ -36,6 +36,7 @@
   - [Kan ik de poort waarop de RDBMS luistert op de Docker host veranderen?](#kan-ik-de-poort-waarop-de-rdbms-luistert-op-de-docker-host-veranderen)
   - [Hoe kan ik dingen uitproberen en uitzoeken aan de database buiten PHP om?](#hoe-kan-ik-dingen-uitproberen-en-uitzoeken-aan-de-database-buiten-php-om)
   - [Hoe bekijk ik de logboeken van de containers?](#hoe-bekijk-ik-de-logboeken-van-de-containers)
+  - [Hoe kan ik de webapp debuggen?](#hoe-kan-ik-de-webapp-debuggen)
   - [🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?](#-hoe-kan-ik-versiebeheer-met-git-gebruiken)
 - [Ontwerp](#ontwerp)
 
@@ -332,6 +333,16 @@ Kies de linker zijbalk > Docker-logo > _Containers_ > rechtsklik - _View Logs_.
 ![Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.](img/Docker-logboeken.png)
 
 *Fig. 9: Kies de linker zijbalk > Docker-logo > Containers > rechtsklik - View Logs.*
+
+### Hoe kan ik de webapp debuggen?
+
+De PHP-debugger XDebug is al geïnstalleerd en geconfigureerd.
+
+![Kies de linker zijbalk > Run and Debug (het icoontje met een *bug* erin). Klik linksbovenin op het play-knopje links naast _Start XDebug in luistermodus_. Klink links naast regelnummers (in de marge) om een breakpoint/stoppunt in te stellen.](img/Debuggen.png)
+
+*Fig. 10: Kies de linker zijbalk > Run and Debug. Klik linksbovenin op het play-knopje links naast _Start XDebug in luistermodus_. Klink links naast regelnummers (in de marge) om een breakpoint/stoppunt in te stellen.*
+
+Zie [Debugging](https://code.visualstudio.com/docs/editor/debugging) voor gedetailleerde instructies over debugging.
 
 ### 🧑‍🏫 Hoe kan ik versiebeheer met Git gebruiken?
 

@@ -5,7 +5,7 @@
       "name": "Start XDebug in luistermodus",
       "type": "php",
       "request": "launch",
-      "port": 9000
+      "port": 9003
     }
   ]
 }
