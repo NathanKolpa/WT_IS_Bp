@@ -293,8 +293,7 @@ Klik daarvoor op de groene knop ‘Install’ bovenaan de webpagina.
 
 ### Kan ik SQL Server ook nog buiten Docker om draaien (op de Docker host)?
 
-Ja, maar dit kan vreemde effecten geven als je op de Docker host zelf, buiten VS Code om, met bijv.
-SQL Server Management Studio probeert te verbinden met de RDBMS-container.
+Ja, maar dit kan vreemde effecten geven als je op de Docker host zelf, buiten VS Code om, met bijvoorbeeld SQL Server Management Studio probeert te verbinden met de RDBMS-container.
 Zie [`rdbms/docker-compose.yml`](rdbms/docker-compose.yml).
 Het is meestal verstandig om alle overige SQL Server instanties te stoppen tijdens je werk aan dit project.
 

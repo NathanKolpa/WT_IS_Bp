@@ -1,6 +1,6 @@
 # Fletnix
 
-Standaard is de broncode onder [`applicatie/`](applicatie/) als volgt gestructureerd:
+Standaard is de broncode onder [`applicatie/`](applicatie/) zo gestructureerd:
 
 ```text
 applicatie
