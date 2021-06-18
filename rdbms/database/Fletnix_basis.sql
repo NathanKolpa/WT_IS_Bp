@@ -5,7 +5,7 @@ CREATE DATABASE Movies;
 GO
 USE Movies
 GO
-CREATE LOGIN applicatie WITH PASSWORD = 'test-password-0nly';
+CREATE LOGIN applicatie WITH PASSWORD = 'testpassword!Hallo-1244!';
 CREATE USER applicatie;
 ALTER ROLE db_datareader ADD MEMBER applicatie;
 ALTER ROLE db_datawriter ADD MEMBER applicatie;
