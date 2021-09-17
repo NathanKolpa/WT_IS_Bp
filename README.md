@@ -225,7 +225,7 @@ Deze pagina werkt en toont tijdelijke ontwikkelinformatie van PHP.
 
 ### 10. VS Code - Herstel de databasebackup met `sqlcmd` 🛢️
 
-Zorg ervoor dat je in het venster voor RDBMS bezig bent.
+Zorg ervoor dat je in het venster voor Webserver bezig bent.
 
 ⚠️ Getest is het herstellen van een [`.sql`-bestand met een basis-databasebackup van de Fletnix-database](rdbms/database/Fletnix_basis.sql).
 Besef dat de database weer weg is als je alle Docker-containers weggooit (in ieder geval die van `rdbms`).
@@ -239,8 +239,9 @@ Kies Menubalk > _Terminal_ > _New terminal_.
 Gebruik `sqlcmd` om het backupbestand te herstellen:
 
 ```sh
-/opt/mssql-tools/bin/sqlcmd -S 'rdbms' -U 'SA' -x -i '/srv/rdbms/database/Fletnix_basis.sql' </run/secrets/password_rdbms_admin
+/opt/mssql-tools/bin/sqlcmd -S 'rdbms' -U 'SA' -x -i '/tmp/fletnix.sql'
 ```
+Voer nu het wachtwoord in zoals je die hebt gedefinieerd in [`./password_rdbms_admin.txt`](./password_rdbms_admin.txt)
 
 Als alles goed is gegaan, zie je alleen output in de vorm van ‘x rows affected.’.
 Dit geeft aan dat er nieuwe rijen aan tabellen zijn toegevoegd.

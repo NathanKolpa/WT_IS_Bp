@@ -2,6 +2,7 @@ version: '3.7'
 services:
   webserver:
     build: .
+    platform: "linux/amd64"
     environment:
       - ACCEPT_EULA=Y
     # Zie https://www.php.net/manual/en/features.commandline.webserver.php

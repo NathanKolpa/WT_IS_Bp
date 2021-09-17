@@ -3,7 +3,6 @@
     "docker-compose.yml"
   ],
   "extensions": [
-    "GitHub.vscode-pull-request-github",
     "breezelin.phpstan",
     "codezombiech.gitignore",
     "ctf0.htmlhint",
@@ -20,9 +19,7 @@
     "mehedidracula.php-namespace-resolver",
     "ms-vsliveshare.vsliveshare",
     "sleistner.vscode-fileutils",
-    "sonarsource.sonarlint-vscode",
     "stylelint.vscode-stylelint",
-    "timonwong.shellcheck",
     "tsqllint.tsqllint",
     "tyriar.sort-lines",
     "visualstudioexptteam.vscodeintellicode",
@@ -57,8 +54,6 @@
     "phpstan.configuration": "phpstan.neon",
     "phpstan.level": "config",
     "scss.validate": false,
-    "sonarlint.disableTelemetry": true,
-    "sonarlint.ls.javaHome": "/usr/",
     "stylelint.configBasedir": "/usr/lib/node_modules/",
     "webhint.enableTelemetry": "disabled"
   },

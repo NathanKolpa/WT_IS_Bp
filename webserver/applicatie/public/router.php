@@ -13,7 +13,6 @@ Met `parse_url` zoals hieronder aangeroepen pak je alleen het pad-gedeelte.
 Dus dan wordt het `'/pad/naar/pagina'`.
 */
 $urlPad = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
 if ($urlPad === '' || $urlPad === '/') {
   require_once 'src/views/index.php';
 } else {
