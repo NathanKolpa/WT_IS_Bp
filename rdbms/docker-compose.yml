@@ -31,7 +31,7 @@ services:
             - source: password_rdbms_admin
               uid: "0"
               gid: "0"
-              mode: "0440"
+              mode: 0440
 secrets:
     password_rdbms_admin:
         file: ../password_rdbms_admin.txt
