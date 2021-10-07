@@ -12,8 +12,8 @@ services:
         # Processen op de Docker host kunnen nog wel luisteren op bijv. TCP localhost:1433. In dat geval wordt de container onbereikbaar op dat adres.
         # Luisteren er géén processen op de Docker host op TCP localhost:1433, dan bereik je ineens deze Docker container op dat adres.
         ports:
-            - target: "1433"
-              published: "1433"
+            - target: 1433
+              published: 1433
               protocol: tcp
               mode: bridge
         # TODO: nodig voor installatie van VS Code MS SQL Server extension (infosec)
