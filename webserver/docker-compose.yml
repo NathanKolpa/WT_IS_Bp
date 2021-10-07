@@ -27,8 +27,8 @@ services:
       - webapplicatie
     secrets:
       - source: password_rdbms_app
-        uid: 0
-        gid: 0
+        uid: '0'
+        gid: '0'
         mode: 0440
 secrets:
   password_rdbms_app:
