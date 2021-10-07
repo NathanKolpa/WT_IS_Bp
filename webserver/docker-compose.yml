@@ -11,8 +11,8 @@ services:
     working_dir: '/srv/webserver/applicatie'
     # TODO: Beperk de socket tot de loopback network interface.
     ports:
-      - target: '80'
-        published: '80'
+      - target: 80
+        published: 80
         protocol: tcp
         mode: bridge
     healthcheck:
@@ -27,9 +27,9 @@ services:
       - webapplicatie
     secrets:
       - source: password_rdbms_app
-        uid: '0'
-        gid: '0'
-        mode: '0440'
+        uid: 0
+        gid: 0
+        mode: 0440
 secrets:
   password_rdbms_app:
     file: ../password_rdbms_app.txt
