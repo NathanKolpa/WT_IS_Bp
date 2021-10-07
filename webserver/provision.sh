@@ -18,15 +18,16 @@ apt-get install -y libgssapi-krb5-2
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
 apt-get update
-apt-get install -y php8.0 php8.0-dev php8.0-xml php8.0-intl php8.0-curl php8.0-mbstring
+apt-get install -y php8.0 php8.0-dev php8.0-xml php8.0-intl php8.0-curl php8.0-mbstring php8.0-xdebug
 
 # very obscure hack, but pecl searches for sed in /usr/bin/sed instead of /sed
 ln -s /bin/sed /usr/bin/sed
 sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
-cp 'php.ini' '/usr/local/etc/php/'
-pecl config-set php_ini '/usr/local/etc/php/php.ini'
+cp 'php.ini' '/etc/php/8.0/cli/'
+cp 'docker-php-ext-xdebug.ini' 'security.ini' '/etc/php/8.0/cli/conf.d/'
+pecl config-set php_ini '/etc/php/8.0/cli/php.ini'
 
 pecl install sqlsrv
 pecl install pdo_sqlsrv
@@ -41,6 +42,7 @@ gpg --verify phive.phar.asc phive.phar
 chmod +x phive.phar
 mv phive.phar /usr/local/bin/phive
 cd /root
+
 phive install php-cs-fixer --trust-gpg-keys E82B2FB314E9906E -g
 phive install phpcbf --trust-gpg-keys 31C7E470E2138192 -g
 phive install phpcs -g
