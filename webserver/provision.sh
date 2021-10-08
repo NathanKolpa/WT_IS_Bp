@@ -25,15 +25,17 @@ ln -s /bin/sed /usr/bin/sed
 sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
-cp 'php.ini' '/etc/php/8.0/cli/'
-cp 'docker-php-ext-xdebug.ini' 'security.ini' '/etc/php/8.0/cli/conf.d/'
-pecl config-set php_ini '/etc/php/8.0/cli/php.ini'
 
 pecl install sqlsrv
 pecl install pdo_sqlsrv
 printf "; priority=20\nextension=sqlsrv.so\n" > /etc/php/8.0/mods-available/sqlsrv.ini
 printf "; priority=30\nextension=pdo_sqlsrv.so\n" > /etc/php/8.0/mods-available/pdo_sqlsrv.ini
 phpenmod -v 8.0 sqlsrv pdo_sqlsrv
+
+cp /root/php.ini /etc/php/8.0/cli/
+cat /root/docker-php-ext-xdebug.ini >> /etc/php/8.0/cli/conf.d/20-xdebug.ini
+cp /root/security.ini /etc/php/8.0/cli/conf.d/
+pecl config-set php_ini /etc/php/8.0/cli/php.ini
 
 wget -O phive.phar https://phar.io/releases/phive.phar
 wget -O phive.phar.asc https://phar.io/releases/phive.phar.asc
